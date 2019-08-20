@@ -1,15 +1,23 @@
-<h1> Shoe index page </h1>
+  <!-- header section can be saved as partial -->
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="p-4">
+      <p class="text-uppercase d-block">LINK 1</p>
+      <p class="text-uppercase d-block">LINK 2</p>
+      <p class="text-uppercase d-block">LINK 3</p>
+    </div>
+  </div>
+  <nav class="navbar navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
 
-<% if user_signed_in? %>
-	<%= link_to 'Add new shoe', new_shoe_path %>
-	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
-	<%= link_to 'User Sign in', new_user_session_path %>
-<% end %>
+<div class="logo-container">
+</div>
+<!-- end header section -->
 
-<% @shoes.each do |shoe, i| %>
-	<% break if i == 2 %>
-	<p> Owner: <%= link_to shoe.user.name , owner_path(shoe.user_id) %>
-	<br>
+<!-- main content section -->
 
-<% end %>
+<h1>Testing to see if</h1>
+<p>This font is Oswald</p>
