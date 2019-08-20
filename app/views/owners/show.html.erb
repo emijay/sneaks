@@ -1,5 +1,19 @@
 <h1> Owner's Shoes collection </h1>
 
+<form method="GET" action="/owners/<%= @id %>">
+	<label>Sort By: </label>
+	<select name="sort">
+	  <!-- <option value="">Sort By</option>
+	  <option value="id">Id</option>
+	  <option value="caption">Caption</option> -->
+	  <option value="r_date">Recent</option>
+	  <option value="o_date">Oldest</option>
+	  <option value="price">Price</option>
+	</select>
+	<button type="submit">Sort</button>
+</form>
+<br>
+
 <% @shoes.each do |shoe| %>
 	<p> Owner: <%= shoe.user.name %>
 	<p> Name: <%= shoe.name %> </p>

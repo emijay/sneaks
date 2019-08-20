@@ -26,6 +26,8 @@ Brand.create(name: "Saucony")
 Brand.create(name: "Under Armour")
 Brand.create(name: "Van")
 
+
+
 Size.create(size: 7)
 Size.create(size: 7.5)
 Size.create(size: 8)
@@ -39,6 +41,7 @@ Size.create(size: 11.5)
 Size.create(size: 12)
 Size.create(size: 12.5)
 Size.create(size: 13)
+
 
 Shoe.create(name: 'Jordan 1 Retro High Satin Black Toe (W)', color: 'BLACK/WHITE-UNIVERSITY RED', release_year: '2019', style: 'CD0461-016', description: 'Jordan Brand adds a twist to a classic with the Air Jordan 1 WMNS Satin “Black Toe”, now available on StockX. Jordan is no stranger to adding satin to the Jordan 1. In May of 2018, they released a satin rendition of the “Shattered Backboard” 1 in a similar fashion, revealing that the release would be in women’s sizing. This AJ 1 features classic “Black Toe” color scheme. This design is constructed in a mix of leather and satin construction providing a luxury feel. A metal Wings logo on the heel completes the design. These sneakers released in August of 2019 and retailed for $160.', cost_price: '160', image_url: 'https://stockx-360.imgix.net/Air-Jordan-1-Retro-High-Satin-Black-Toe-W/Images/Air-Jordan-1-Retro-High-Satin-Black-Toe-W/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1566245180&w=1000', brand_id: 2, size_id: 11, user_id: 1)
 Shoe.create(name: 'Air Max 97 Ultra Sprite (W)', color: 'WHITE/BLUE NEBULA-VOLT', release_year: '2018', style: 'AH6806-101', description: '', cost_price: '160', image_url: 'https://stockx.imgix.net/Nike-Air-Max-97-Ultra-Sprite-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1538080256&w=1000', brand_id: 13, size_id: 11, user_id: 1)
