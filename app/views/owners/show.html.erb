@@ -9,7 +9,9 @@
 	<p> Release year: <%= shoe.release_year %> </p>
 	<p> Price: $<%= shoe.cost_price %> </p>
 	<p> Description: <%= shoe.description %> </p>
+	<% if user_signed_in? && current_user.id == shoe.user.id %>
 	<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
+	<% end %>
 	<br>
 <% end %>
 
