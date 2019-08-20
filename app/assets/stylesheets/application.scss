@@ -27,11 +27,6 @@ body {
   }
 }
 
-.navbar-container {
-	display: flex;
-	justify-content: center;
-}
-
 div#navbarToggleExternalContent {
   text-align: center;
 }
@@ -59,14 +54,18 @@ div#navbarToggleExternalContent {
   margin: 0 auto;
   background-image: url(logo.png);
   background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+// shoes
 .col-12.col-md-8 {
     background-color: pink;
+    margin: 20px auto;
 }
 
+// filters
 .col-6.col-md-4 {
 	background-color: $brand-color;
+	margin: 20px auto;
 }
