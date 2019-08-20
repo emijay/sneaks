@@ -20,7 +20,7 @@ class ShoesController < ApplicationController
       @shoe = Shoe.new(shoe_params)
       @shoe.save
 
-      redirect_to shoes_path
+      redirect_to owner_path(current_user.id)
 
     end
 
