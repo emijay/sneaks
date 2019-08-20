@@ -19,9 +19,22 @@ $brand-color: #fff952;
 
 body {
   font-family: 'Montserrat', sans-serif !important;
+
   h1 {
+  	text-align: center;
   	font-weight: 400;
   }
+
+  h2 {
+  	display: inline-block;
+  	margin: 0 auto;
+  	text-align: center;
+  	font-weight: 300;
+  	font-size: 30px;
+  	padding-bottom: 5px;
+  	border-bottom: 1px solid black;
+  }
+
   p {
   	font-weight: 300;
   }
@@ -59,13 +72,29 @@ div#navbarToggleExternalContent {
 }
 
 // shoes
-.col-12.col-md-8 {
-    background-color: pink;
+.collection {
+    // background-color: pink;
     margin: 20px auto;
 }
 
 // filters
-.col-6.col-md-4 {
+.filter {
 	background-color: $brand-color;
 	margin: 20px auto;
+}
+
+// individual collection page
+.collection-owner {
+	display: flex;
+	justify-content: center;
+	margin: 50px auto;
+}
+
+.shoe-container {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }

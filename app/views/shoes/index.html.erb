@@ -1,46 +1,41 @@
-  <!-- header section can be saved as partial -->
-	<div class="collapse" id="navbarToggleExternalContent">
+  <!-- header section - to be saved as partial later -->
+<div class="collapse" id="navbarToggleExternalContent">
+
 	  <div class="p-4">
 			<% if user_signed_in? %>
-				<h4> You are signed in as: <%= current_user.name %></h4>
-	      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %> </p>
+					<h4> You are signed in as: <%= current_user.name %></h4>
+		      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
 			<% end %>
-	      <p class="text-uppercase d-block">
-	      	<% if user_signed_in? %>
-						<%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
-					<% else %>
+
+	    <p class="text-uppercase d-block">
+	    	<% if user_signed_in? %>
+						<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+				<% else %>
 						<%= link_to 'User Sign in', new_user_session_path %>
-					<% end %>
-	      </p>
-	    </div>
+				<% end %>
+	    </p>
+
 	  </div>
-	  <nav class="navbar navbar-light">
-	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	  </nav>
 	</div>
 
-<% @shoes.each_with_index do |shoe, i| %>
-	<% break if i == 2 %>
-	<p> Owner: <%= link_to shoe.user.name , owner_path(shoe.user_id) %>
-	<br>
+	<nav class="navbar navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
 
-<% end %>
-
-<br>
-<%= link_to "All owners' collections", owners_path %>
-
+<div class="logo container">
+	<div class = "row-fluid">
+		<div class="col-12 logo-container"></div>
+	</div>
+</div>
 <!-- end header section -->
 
 <!-- main content section -->
 <div class="main-content container-fluid">
-	<div class="row-fluid">
-		<div class="col-12 logo-container"></div>
-	</div>
 	<div class="row">
     <div class="col-6 col-md-4">This is where the filter stuff will go</div>
   	<div class="d-flex flex-row col-12 col-md-8 ">This is where shoes go - need to loop over content</div>
   </div>
 </div>
->>>>>>> merge-controller-layout

@@ -1,18 +1,24 @@
-<h1> Owner's Shoes collection </h1>
+<%= render "layouts/header" %>
 
-<% @shoes.each do |shoe| %>
-	<p> Owner: <%= shoe.user.name %>
-	<p> Name: <%= shoe.name %> </p>
-	<p> Brand: <%= shoe.brand.name %> </p>
-	<p> Size: <%= shoe.size.size %> </p>
-	<p> Colour: <%= shoe.color %> </p>
-	<p> Release year: <%= shoe.release_year %> </p>
-	<p> Price: $<%= shoe.cost_price %> </p>
-	<p> Description: <%= shoe.description %> </p>
-	<% if user_signed_in? && current_user.id == shoe.user.id %>
-	<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
-	<% end %>
-	<br>
-<% end %>
+<div class="collection-owner">
+	<h2><%= current_user.name %>'s Collection</h2>
+</div>
+
+<!-- main content section -->
+<div class="main-content container-fluid">
+
+	<div class="row">
+    <div class="col-6 col-md-3 filter">This is where the filter stuff will go</div>
+
+  	<div class="col-12 col-md-9 collection">
+			<% @shoes.each do |shoe| %>
+				<div class="shoe-container" style=
+			  "background-image: url(<%= shoe.image_url %>)">
+			  </div>
+				<% end %>
+		</div>
+	</div>
+
+</div>
 
 <%= link_to 'Back', shoes_path %>
