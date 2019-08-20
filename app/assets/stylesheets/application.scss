@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+    font-family: 'BebasNeueBook', sans-serif;
+    src: font-url('BebasNeueBook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import "bootstrap";
 
 $brand-color: #fff952;
@@ -38,6 +45,14 @@ body {
   p {
   	font-weight: 300;
   	margin-bottom: 0;
+  }
+
+  a {
+  	color: black;
+  }
+
+  a:hover {
+  	color: $brand-color;
   }
 }
 
@@ -81,17 +96,21 @@ div#navbarToggleExternalContent {
 
 // filters column
 .filter {
-	background-color: $brand-color;
 	margin: 20px auto;
+	text-align: center;
+}
+
+.filter-header {
+	h1 {
+		font-family: 'BebasNeueBook', sans-serif;
+	}
 }
 
 //shoe cards
 .collection {
-    // background-color: pink;
     margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-around;
 }
 
 .shoe-container {

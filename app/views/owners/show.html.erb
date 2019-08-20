@@ -1,42 +1,40 @@
 <%= render "layouts/header" %>
-
 <div class="collection-owner">
 	<h2><%= current_user.name %>'s Collection</h2>
+	<p><%= @shoes %></p>
 </div>
-
 <!-- main content section -->
 <div class="main-content container-fluid">
-
 	<div class="row">
-    <div class="col-6 col-md-3 filter">This is where the filter stuff will go</div>
-
-  	<div class="col-12 col-md-9 collection">
+		<div class="col-6 col-md-3 filter">
+			<div class="filter-header">
+				<h1>FILTER</h1>
+			</div>
+			<form method="GET" action="/owners/<%= @id %>">
+				<label>Sort By: </label>
+					<select name="sort">
+					<option value="r_date">Newest</option>
+					<option value="o_date">Oldest</option>
+						<option value="h_price">Highest Price</option>
+					<option value="l_price">Lowest Price</option>
+					</select>
+				<button type="submit">Sort</button>
+	</form>
+		</div>
+		<div class="col-12 col-md-9 collection">
 			<% @shoes.each do |shoe| %>
-				<div class="shoe-container" style=
-			  "background-image: url(<%= shoe.image_url %>)">
-
-				  <div class="shoe-caption">
-						<p><span class="bold"><%= shoe.name %></span></p>
-					  <p><%= shoe.brand.name %></p>
-					  <% if user_signed_in? && current_user.id == shoe.user.id %>
-							<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
-						<% end %>
+			<%= link_to shoe_path(shoe) do %>
+			<div class="shoe-container" style=
+				"background-image: url(<%= shoe.image_url %>)">
+				<div class="shoe-caption">
+					<p><span class="bold"><%= shoe.name %></span></p>
+					<p><%= shoe.brand.name %></p>
 				</div>
 			</div>
-		<% end %>
+			<% end %>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<form method="GET" action="/owners/<%= @id %>">
-	<label>Sort By: </label>
-	<select name="sort">
-	  <option value="r_date">Recent</option>
-	  <option value="o_date">Oldest</option>
-	  <option value="h_price">Highest Price</option>
-	  <option value="l_price">Lowest Price</option>
-	</select>
-	<button type="submit">Sort</button>
-</form>
-<br>
-
-<%= link_to 'Back', shoes_path %>
+	<br>
+	<%= link_to 'Back', shoes_path %>
