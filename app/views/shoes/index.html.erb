@@ -1,8 +1,14 @@
 <h1> Shoe index page </h1>
 
-<%= link_to 'Add new shoe', new_shoe_path %>
+<% if user_signed_in? %>
+	<%= link_to 'Add new shoe', new_shoe_path %>
+	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to 'User Sign in', new_user_session_path %>
+<% end %>
 
 <% @shoes.each do |shoe| %>
+	<p> Owner: <%= shoe.user.name %>
 	<p> Name: <%= shoe.name %> </p>
 	<p> Brand: <%= shoe.brand.name %> </p>
 	<p> Size: <%= shoe.size.size %> </p>
@@ -10,7 +16,9 @@
 	<p> Release year: <%= shoe.release_year %> </p>
 	<p> Price: $<%= shoe.cost_price %> </p>
 	<p> Description: <%= shoe.description %> </p>
-	<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
+	<% if user_signed_in? %>
+		<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
+	<% end %>
 	<br>
 
 <% end %>
