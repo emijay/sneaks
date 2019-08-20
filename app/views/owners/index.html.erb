@@ -1,4 +1,4 @@
-<h1> Owner's Shoes collection </h1>
+<h1> <%= shoe.user.name %>'s Shoes collection </h1>
 
 <% @shoes.each do |shoe| %>
 	<p> Owner: <%= link_to shoe.user.name, owner_path(shoe.user_id) %>
