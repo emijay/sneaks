@@ -40,7 +40,13 @@
 	</div>
 	<div class="row">
     <div class="col-6 col-md-4">This is where the filter stuff will go</div>
-  	<div class="d-flex flex-row col-12 col-md-8 ">This is where shoes go - need to loop over content</div>
+  	<div class="d-flex flex-row col-12 col-md-8 ">This is where shoes go - need to loop over content
+		<% @shoes.each_with_index do |shoe, i| %>
+	<% break if i == 2 %>
+	<p> Owner: <%= link_to shoe.user.name , owner_path(shoe.user_id) %>
+	<br>
+
+<% end %>
+  	</div>
   </div>
 </div>
->>>>>>> merge-controller-layout
