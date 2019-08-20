@@ -1,0 +1,14 @@
+<h1> Owner's Shoes collection </h1>
+
+<% @shoes.each do |shoe| %>
+	<% @shoes.each do |shoe| %>
+	<p> Owner: <%= shoe.user.name %>
+	<p> Name: <%= shoe.name %> </p>
+	<p> Brand: <%= shoe.brand.name %> </p>
+	<p> Size: <%= shoe.size.size %> </p>
+	<p> Colour: <%= shoe.color %> </p>
+	<p> Release year: <%= shoe.release_year %> </p>
+	<p> Price: $<%= shoe.cost_price %> </p>
+	<p> Description: <%= shoe.description %> </p>
+	<br>
+<% end %>

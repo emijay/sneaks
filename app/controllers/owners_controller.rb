@@ -1,17 +1,16 @@
-class ShoesController < ApplicationController
+class OwnersController < ApplicationController
 
     def index
-      @shoes = Shoe.all
+      @shoes = Shoe.where(user_id: current_user.id)
     end
 
     def show
-      @shoe = Shoe.find(params[:id])
+      @shoes = Shoe.where(user_id: params[:id])
     end
 
     def new
       @brands = Brand.all
       @sizes = Size.all
-      @id = current_user.id
     end
 
     def create

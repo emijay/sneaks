@@ -1,0 +1,16 @@
+<h1> Owner's Shoes collection </h1>
+
+<% @shoes.each do |shoe| %>
+	<p> Owner: <%= shoe.user.name %>
+	<p> Name: <%= shoe.name %> </p>
+	<p> Brand: <%= shoe.brand.name %> </p>
+	<p> Size: <%= shoe.size.size %> </p>
+	<p> Colour: <%= shoe.color %> </p>
+	<p> Release year: <%= shoe.release_year %> </p>
+	<p> Price: $<%= shoe.cost_price %> </p>
+	<p> Description: <%= shoe.description %> </p>
+	<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
+	<br>
+<% end %>
+
+<%= link_to 'Back', shoes_path %>

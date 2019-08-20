@@ -7,18 +7,9 @@
 	<%= link_to 'User Sign in', new_user_session_path %>
 <% end %>
 
-<% @shoes.each do |shoe| %>
-	<p> Owner: <%= shoe.user.name %>
-	<p> Name: <%= shoe.name %> </p>
-	<p> Brand: <%= shoe.brand.name %> </p>
-	<p> Size: <%= shoe.size.size %> </p>
-	<p> Colour: <%= shoe.color %> </p>
-	<p> Release year: <%= shoe.release_year %> </p>
-	<p> Price: $<%= shoe.cost_price %> </p>
-	<p> Description: <%= shoe.description %> </p>
-	<% if user_signed_in? %>
-		<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
-	<% end %>
+<% @shoes.each do |shoe, i| %>
+	<% break if i == 2 %>
+	<p> Owner: <%= link_to shoe.user.name , owner_path(shoe.user_id) %>
 	<br>
 
 <% end %>
