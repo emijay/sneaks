@@ -18,12 +18,25 @@
 				  <div class="shoe-caption">
 						<p><span class="bold"><%= shoe.name %></span></p>
 					  <p><%= shoe.brand.name %></p>
-					</div>
+					  <% if user_signed_in? && current_user.id == shoe.user.id %>
+							<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
+						<% end %>
 				</div>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 	</div>
-
 </div>
+
+<form method="GET" action="/owners/<%= @id %>">
+	<label>Sort By: </label>
+	<select name="sort">
+	  <option value="r_date">Recent</option>
+	  <option value="o_date">Oldest</option>
+	  <option value="h_price">Highest Price</option>
+	  <option value="l_price">Lowest Price</option>
+	</select>
+	<button type="submit">Sort</button>
+</form>
+<br>
 
 <%= link_to 'Back', shoes_path %>

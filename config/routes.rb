@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :sizes
   resources :shoes
   resources :owners
+
 end
