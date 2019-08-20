@@ -1,9 +1,17 @@
   <!-- header section can be saved as partial -->
 	<div class="collapse" id="navbarToggleExternalContent">
 	  <div class="p-4">
-	      <p class="text-uppercase d-block">LINK 1</p>
-	      <p class="text-uppercase d-block">LINK 2</p>
-	      <p class="text-uppercase d-block">LINK 3</p>
+			<% if user_signed_in? %>
+				<h4> You are signed in as: <%= current_user.name %></h4>
+	      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %> </p>
+			<% end %>
+	      <p class="text-uppercase d-block">
+	      	<% if user_signed_in? %>
+						<%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+					<% else %>
+						<%= link_to 'User Sign in', new_user_session_path %>
+					<% end %>
+	      </p>
 	    </div>
 	  </div>
 	  <nav class="navbar navbar-light">
@@ -13,21 +21,13 @@
 	  </nav>
 	</div>
 
-
-<% if user_signed_in? %>
-	<p><%= link_to 'Add new shoe', new_shoe_path %> || <%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
-	<h4> Youre signed in as: <%= current_user.name %></h4>
-
-<% else %>
-	<%= link_to 'User Sign in', new_user_session_path %>
-<% end %>
-
 <% @shoes.each_with_index do |shoe, i| %>
 	<% break if i == 2 %>
 	<p> Owner: <%= link_to shoe.user.name , owner_path(shoe.user_id) %>
 	<br>
 
 <% end %>
+
 <br>
 <%= link_to "All owners' collections", owners_path %>
 
