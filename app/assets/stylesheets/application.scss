@@ -37,6 +37,7 @@ body {
 
   p {
   	font-weight: 300;
+  	margin-bottom: 0;
   }
 }
 
@@ -71,18 +72,6 @@ div#navbarToggleExternalContent {
   background-repeat: no-repeat;
 }
 
-// shoes
-.collection {
-    // background-color: pink;
-    margin: 20px auto;
-}
-
-// filters
-.filter {
-	background-color: $brand-color;
-	margin: 20px auto;
-}
-
 // individual collection page
 .collection-owner {
 	display: flex;
@@ -90,11 +79,46 @@ div#navbarToggleExternalContent {
 	margin: 50px auto;
 }
 
+// filters column
+.filter {
+	background-color: $brand-color;
+	margin: 20px auto;
+}
+
+//shoe cards
+.collection {
+    // background-color: pink;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-around;
+}
+
 .shoe-container {
 	display: inline-block;
+	margin: 10px 50px;
+	position: relative;
 	width: 400px;
 	height: 400px;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.shoe-caption {
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	width: 100%;
+
+	.bold {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}
+
+@media (max-width: 480px) {
+	.shoe-container {
+		margin: 0;
+	}
 }

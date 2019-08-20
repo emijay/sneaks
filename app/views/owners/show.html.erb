@@ -14,8 +14,13 @@
 			<% @shoes.each do |shoe| %>
 				<div class="shoe-container" style=
 			  "background-image: url(<%= shoe.image_url %>)">
-			  </div>
-				<% end %>
+
+				  <div class="shoe-caption">
+						<p><span class="bold"><%= shoe.name %></span></p>
+					  <p><%= shoe.brand.name %></p>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 
