@@ -1,0 +1,55 @@
+<h1> Add new shoe</h1>
+
+<%= form_with scope: :shoes, url: shoes_path, local: true do |form| %>
+
+	<p> Brand: <%= form.collection_select :brand_id, @brands, :id, :name %> </p>
+  <p> Size: <%= form.collection_select :size_id, @sizes, :id, :size %> </p>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :color %><br>
+    <%= form.text_field :color %>
+  </p>
+
+  <p>
+    <%= form.label :release_year %><br>
+    <%= form.text_field :release_year %>
+  </p>
+
+  <p>
+    <%= form.label :style %><br>
+    <%= form.text_field :style %>
+  </p>
+
+  <p>
+    <%= form.label :cost_price %><br>
+    <%= form.text_field :cost_price %>
+  </p>
+
+	<p>
+    <%= form.label :image_url %><br>
+    <%= form.text_field :image_url %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+
+	<p>
+    <%= form.hidden_field :user_id, :value => 1 %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', shoes_path %>
