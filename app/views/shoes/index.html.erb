@@ -1,0 +1,133 @@
+<!-- header section can be saved as partial -->
+	<div class="collapse" id="navbarToggleExternalContent">
+	  <div class="p-4">
+			<% if user_signed_in? %>
+				<h4> You are signed in as: <%= current_user.name %></h4>
+	      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %> </p>
+			<% end %>
+	      <p class="text-uppercase d-block">
+	      	<% if user_signed_in? %>
+						<%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+					<% else %>
+						<%= link_to 'User Sign in', new_user_session_path %>
+					<% end %>
+	      </p>
+	    </div>
+	  </div>
+	  <nav class="navbar navbar-light">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	  </nav>
+	</div>
+<!-- end header section -->
+
+<!-- main content section -->
+<div class="main-content container">
+
+	<div class="row-fluid">
+		<div class="logo-container mb-5"></div>
+	</div>
+
+	<div class="row-fluid text-center">
+		<h2 class="mb-5">Latest News</h2>
+		<div class="row">
+			<div class="card-deck">
+  			<div class="card">
+  				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F08%2Fadidas-ultraboost-2020-first-look-001.jpg?q=90&w=1400&cbr=1&fit=max" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">First Look at the Rumored adidas UltraBOOST 2020</h5>
+      			<p class="card-text">After introducing the UltraBOOST ‘19 for this year, it looks as if a new version will soon be hitting the shelves. Shared via @sneakerprophet_, we have our first look at what could potentially be the UltraBOOST 2020.</p>
+      			<a href="#" class="btn btn-primary">Read More</a>
+    			</div>
+  			</div>
+
+  			<div class="card">
+  				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F08%2Fvans-ave-pro-anthony-van-engelen-release-001.jpg?q=90&w=1400&cbr=1&fit=max" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">Anthony Van Engelen Receives New Signature Sneaker: Vans AVE Pro</h5>
+      			<p class="card-text">After recently showcasing its patchwork-clad “MONALISA” pack, Vans has returned with a new special silhouette that celebrates Anthony Van Engelen‘s skateboarding career: Vans AVE Pro. </p>
+      			<a href="#" class="btn btn-primary">Read More</a>
+    			</div>
+  			</div>
+
+  			<div class="card">
+  				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F08%2Flouis-vuitton-trainer-black-white-001.jpg?q=90&w=1400&cbr=1&fit=max" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">Louis Vuitton's LV 408 Trainer Now Comes in Pristine Black & White Colorway</h5>
+      			<p class="card-text">Louis Vuitton‘s LV 408 Trainer is possibly Virgil Abloh‘s most lauded sneaker design for the Parish fashion house this Fall/Winter 2019 season. Originally debuted in a high, black and grey version alongside a few low-top iterations in green and red, the retro, yet luxurious kicks are now available in a pristine black and white option.</p>
+      			<a href="#" class="btn btn-primary">Read More</a>
+    			</div>
+  			</div>
+		</div>
+
+		<div class="row-fluid">
+			<h2 class="my-4">Upcoming Sneaker Launches</h2>
+
+			<div class="card-deck">
+  			<div class="card">
+  				<img src="https://images.solecollector.com/complex/image/upload/c_fill,f_auto,fl_lossy,q_auto,w_1100/jhcouz7qyrfydyfzyypb.jpg" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">Adidas D.O.N. Issue #1 "Iron Spider"</h5>
+      			<p class="card-text"></p>
+    			</div>
+  				<ul class="list-group list-group-flush">
+    				<li class="list-group-item">Release Date: 31 Aug 2019</li>
+    				<li class="list-group-item">Retail Price: $100.</li>
+  				</ul>
+  			</div>
+
+  			<div class="card">
+  				<img src="https://images.solecollector.com/complex/image/upload/c_fill,f_auto,fl_lossy,q_auto,w_1100/kfiapudbjgpsloneiydf.jpg" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">Nike Kobe AD NXT Black/Multi-Color</h5>
+      			<p class="card-text"></p>
+    			</div>
+  				<ul class="list-group list-group-flush">
+    				<li class="list-group-item">Release Date: 24 Aug 2019</li>
+    				<li class="list-group-item">Retail Price: $200.</li>
+  				</ul>
+  			</div>
+
+  			<div class="card">
+  				<img src="http://3app.kicksonfire.com/kofapp/upload/events_images/iphone_321902db384a2e565b4d9a61e6764f3b5d573ea3bff46.jpg" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">Nike Kobe AD NXT FastFit Vast Grey</h5>
+      			<p class="card-text"></p>
+    			</div>
+  				<ul class="list-group list-group-flush">
+    				<li class="list-group-item">Release Date: 24 Aug 2019</li>
+    				<li class="list-group-item">Retail Price: $200.</li>
+  				</ul>
+  			</div>
+
+  			<div class="card">
+  				<img src="http://3app.kicksonfire.com/kofapp/upload/events_images/iphone_fded4d14e0d4fe4adf735bb934ee1c795d48c00a0e1c6.jpg" class="card-img-top" alt="...">
+    			<div class="card-body">
+      			<h5 class="card-title">Nike AlphaDunk Dunk Of Death</h5>
+      			<p class="card-text"></p>
+    			</div>
+  				<ul class="list-group list-group-flush">
+    				<li class="list-group-item">Release Date: 30 Aug 2019</li>
+    				<li class="list-group-item">Retail Price: $170.</li>
+  				</ul>
+  			</div>
+
+		</div>
+
+		<div class="row-fluid">
+			<h2 class="my-4">Featured Sneaker Collection</h2>
+
+		</div>
+  </div>
+</div>
+
+<!--
+<% @shoes.each_with_index do |shoe, i| %>
+	<% break if i == 2 %>
+	<p> Owner: <%= link_to shoe.user.name , owner_path(shoe.user_id) %>
+	<br>
+<% end %>
+
+<br>
+<%= link_to "All owners' collections", owners_path %> -->

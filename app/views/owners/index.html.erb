@@ -1,0 +1,8 @@
+<h1> Owner's Shoes Collection </h1>
+
+<% @shoes.each do |shoe| %>
+	<p> Owner: <%= link_to shoe.user.name, owner_path(shoe.user_id) %>
+	<br>
+<% end %>
+<br>
+<%= link_to 'Back', shoes_path %>
