@@ -6,7 +6,10 @@
 <p> Size: <%= @shoe.size.size %> </p>
 <p> Colour: <%= @shoe.color %> </p>
 <p> Release year: <%= @shoe.release_year %> </p>
-<p> Price: $<%= @shoe.cost_price %> </p>
+<p> Cost Price: $<%= @shoe.cost_price %> </p>
+<p> Current Market Price: $<%= @stockx %>(StockX), $<%= @goat %>(GOAT), $<%= @flightclub %>(FlightClub)</p>
 <p> Description: <%= @shoe.description %> </p>
 
 <p> <%= link_to 'Back', shoes_path %> </p>
+
+<br />
