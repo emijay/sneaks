@@ -1,25 +1,10 @@
-
-<%= form_with scope: :filters, url: owner_path(@id), local: true do |form| %>
-
-	<%= form.collection_check_boxes(:brand_ids, @brands, :id, :name) do |b| %>
-			<div>
-				<%= b.check_box %><%= b.label { b.text } %>
-			</div>
-   <% end %>
-
-	<p>
-    <%= form.submit :'Filter' %>
-  </p>
-
-<% end %>
-
 <%= render "layouts/header" %>
 
 <!-- main content -->
 <div class="collection-owner">
 	<h2><%= @owner[0].name %>'s Collection</h2>
 </div>
-<div class="main-content container-fluid">
+<div class="owner-main-content container-fluid">
 	<div class="row">
 <!-- filtering column -->
 		<div class="col-6 col-md-3 filter">
@@ -55,4 +40,3 @@
 			<% end %>
 		</div>
 	</div>
-

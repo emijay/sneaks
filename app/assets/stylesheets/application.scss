@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+
  @font-face {
     font-family: 'BebasNeueBook', sans-serif;
     src: font-url('BebasNeueBook.woff') format('woff');
@@ -20,30 +22,46 @@
     font-style: normal;
 }
 
-@import "bootstrap";
-
 $brand-color: #fff952;
+$bebas: 'BebasNeueBook', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+
+html {
+	overflow-y: scroll;
+}
 
 body {
   font-family: 'Montserrat', sans-serif !important;
 
   h1 {
-  	text-align: center;
   	font-weight: 400;
+  	text-align: center;
   }
 
   h2 {
-  	display: inline-block;
-  	margin: 0 auto;
-  	text-align: center;
   	font-weight: 300;
-  	font-size: 30px;
+  	font-size: 20px;
+  	text-align: center;
+  	margin: 0 auto;
+  	display: inline-block;
   	padding-bottom: 5px;
-  	border-bottom: 1px solid black;
+  	border-bottom: 2px solid $brand-color;
+  }
+
+  h3 {
+  	font-size: 30px;
+  }
+
+  h4 {
+  	// text-align: center;
+  	display: inline-block;
+  	padding-bottom: 5px;
+  	border-bottom: 2px solid $brand-color;
   }
 
   p {
   	font-weight: 300;
+  	font-size: 12px;
   	margin-bottom: 0;
   }
 
@@ -54,6 +72,20 @@ body {
   a:hover {
   	color: $brand-color;
   }
+
+  button:active, button:focus {
+  	outline: none!important;
+  }
+
+  .bold {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	.shadow {
+	border: solid 2px;
+	box-shadow: 15px 15px 0 0 #F9C397;
+	}
 }
 
 div#navbarToggleExternalContent {
@@ -78,16 +110,16 @@ div#navbarToggleExternalContent {
  }
 
 .logo-container {
-	height: 100px;
-  width: 400px;
-  margin: 20px auto;
+	height: 85px;
+  // width: 400px;
+  margin: 10px auto;
   background-image: url(logo.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-// individual collection page
+// individual collection page //
 .collection-owner {
 	display: flex;
 	justify-content: center;
@@ -97,6 +129,7 @@ div#navbarToggleExternalContent {
 // filters column
 .filter {
 	margin: 20px auto;
+	padding: 45px;
 	text-align: center;
 }
 
@@ -106,11 +139,15 @@ div#navbarToggleExternalContent {
 	background-position: bottom;
 
 	h1 {
-		font-family: 'BebasNeueBook', sans-serif;
+		font-family: $bebas;
+		font-size: 25px;
+		margin: 20px 0;
 	}
 }
 
 #sorting-form {
+	font-size: 13px;
+
 	select:active, select:focus, button {
 		outline: none!important;
 	}
@@ -125,13 +162,13 @@ div#navbarToggleExternalContent {
 
 .shoe-container {
 	display: inline-block;
-	margin: 10px 50px;
-	position: relative;
-	width: 400px;
-	height: 400px;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+  margin: 0px 40px;
+  position: relative;
+  width: 260px;
+  height: 280px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .shoe-caption {
@@ -139,15 +176,122 @@ div#navbarToggleExternalContent {
 	bottom: 10px;
 	text-align: center;
 	width: 100%;
+}
 
-	.bold {
-		font-weight: 500;
-		text-transform: uppercase;
+// individual shoe page //
+.shoe-main-content {
+
+	h3 {
+		margin-bottom: 20px;
+  	display: inline-block;
+  	padding-bottom: 2px;
+  	border-bottom: 2px solid $brand-color;
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		list-style-type: none;
+		margin: 10px auto;
+	}
+
+	button {
+		font-family: $bebas;
+		font-size: 20px;
+		border: none;
+		background: linear-gradient(to bottom, $brand-color 0%, $brand-color 100%) no-repeat;
+		background-size: (80% 60%);
+		background-position: bottom;
+	}
+
+	input[type="submit"], button.submit-style {
+		font-family: $montserrat;
+		font-size: 15px;
+		font-weight: 300;
+    margin: 30px 0;
+    padding: 8px;
+    border: none;
+    background: black;
+    color: $brand-color;
+    display: inline;
 	}
 }
 
+.shoe-picture {
+	margin: 0 auto;
+  width: 100%;
+  height: 500px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shoe-market-price {
+	// background-color: $brand-color;
+    display: flex;
+    justify-content: center;
+
+		.card {
+			width: 20%;
+			display: inline-block;
+		}
+}
+
+// edit individual shoe page //
+#edit-form {
+	margin-top: 10px;
+
+	p {
+    margin: 20px 0;
+	}
+
+	label {
+		font-weight: 500;
+    margin: 0 auto;
+	}
+
+	input {
+    font-weight: 300;
+		border: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid $brand-color;
+	}
+
+	input[type="submit"] {
+		margin: 0;
+	}
+}
+
+// media queries //
 @media (max-width: 480px) {
 	.shoe-container {
 		margin: 0;
+	}
+
+	.shoe-picture {
+		height: 250px;
+	}
+
+	.shoe-main-content {
+		text-align: center;
+
+		h3 {
+			font-size: 20px;
+		}
+	}
+
+	.shoe-market-price {
+		flex-wrap: wrap;
+
+		.card {
+			width: 100%;
+			display: block;
+		}
 	}
 }

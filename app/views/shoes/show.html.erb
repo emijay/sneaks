@@ -1,15 +1,78 @@
-<h1> Individual shoe page (show page) </h1>
+<%= render "layouts/header" %>
 
-<p> Owner: <%= @shoe.user.name %></p>
-<p> Name: <%= @shoe.name %> </p>
-<p> Brand: <%= @shoe.brand.name %> </p>
-<p> Size: <%= @shoe.size.size %> </p>
-<p> Colour: <%= @shoe.color %> </p>
-<p> Release year: <%= @shoe.release_year %> </p>
-<p> Cost Price: $<%= @shoe.cost_price %> </p>
-<p> Current Market Price: $<%= @stockx %>(StockX), $<%= @goat %>(GOAT), $<%= @flightclub %>(FlightClub)</p>
-<p> Description: <%= @shoe.description %> </p>
+<div class="shoe-main-content container-fluid">
+	<div class="row d-flex align-items-center">
 
-<p> <%= link_to 'Back', shoes_path %> </p>
+		<div class="col-12 col-md-6 offset-md-1">
+			<div class="shoe-picture" style=
+				"background-image: url(<%= @shoe.image_url %>)">
+			</div close shoe picture div>
+		</div close shoe picture+ name div>
 
-<br />
+		<div class="col-12 col-md-4 ofset-md-0.5">
+			<h3><%= @shoe.name %></h3>
+			<ul>
+				<li><p><span class="bold">Brand:</span> <%= @shoe.brand.name %></p></li>
+				<li><p><span class="bold">Style:</span> <%= @shoe.style %> </p></li>
+				<li><p><span class="bold">Size:</span> <%= @shoe.size.size %> </p></li>
+				<li><p><span class="bold">Colour:</span> <%= @shoe.color %> </p></li>
+				<li><p><span class="bold">Release Year:</span> <%= @shoe.release_year %></p></li>
+				<li><p><span class="bold">Price:</span> $<%= @shoe.cost_price.tr('$', '') %></p></li>
+			</ul>
+
+			<% if user_signed_in? && current_user.id == @shoe.user.id %>
+
+        <%= link_to edit_shoe_path(@shoe) do %>
+        	<button>Edit</button>
+      	<% end %>
+
+      	<%= link_to shoe_path(@shoe), method: :delete, data: {confirm: 'Are you sure you want to delete?'} do %>
+        	<button>Delete</button>
+      	<% end %>
+      <% end %>
+
+		<%= button_to "Back to Collection", owner_path(@shoe.user_id), method: :get %>
+		</div close shoe description div>
+	</div close shoe pic and description row>
+
+	<div class="row">
+		<div class="col-12 d-flex justify-content-center">
+			<h4>TESTING</h4>
+		</div>
+
+		<div class="col-12 shoe-market-price">
+			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Card 1</h5>
+    			<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Card 2</h5>
+    			<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Card 3</h5>
+    			<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Card 4</h5>
+    			<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+
+		</div closing market price col>
+	</div close price row>
+</div close main container>

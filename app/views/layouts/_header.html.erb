@@ -1,31 +1,37 @@
-<div class="collapse" id="navbarToggleExternalContent">
+<div style="width:100vw">
 
-	  <div class="p-4">
-			<% if user_signed_in? %>
-					<h4> You are signed in as: <%= current_user.name %></h4>
-		      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
-			<% end %>
+		<div class="collapse" id="navbarToggleExternalContent">
 
-	    <p class="text-uppercase d-block">
-	    	<% if user_signed_in? %>
-						<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-				<% else %>
-						<%= link_to 'User Sign in', new_user_session_path %>
-				<% end %>
-	    </p>
+			  <div class="p-4">
+					<% if user_signed_in? %>
+							<h4> You are signed in as: <%= current_user.name %></h4>
+							<p class="text-uppercase d-block"><%= link_to 'View Your Collection', owner_path(current_user.id) %></p>
+				      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
+					<% end %>
 
-	  </div>
+			    <p class="text-uppercase d-block">
+			    	<% if user_signed_in? %>
+								<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+						<% else %>
+								<%= link_to 'User Sign in', new_user_session_path %>
+						<% end %>
+			    </p>
+
+			  </div>
+			</div>
+
+			<nav class="navbar navbar-light">
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		    </button>
+		  </nav>
+		</div>
 	</div>
 
-	<nav class="navbar navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-</div>
-
-<div class="logo container">
-	<div class = "row-fluid">
-		<div class="col-12 logo-container"></div>
-	</div>
-</div>
+	<%= link_to root_path do %>
+		<div class="logo container">
+			<div class = "row-fluid">
+				<div class="col-12 logo-container"></div>
+			</div>
+		</div>
+	<% end %>
