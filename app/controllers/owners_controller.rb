@@ -9,8 +9,10 @@ class OwnersController < ApplicationController
       @brands = Brand.all
       @owner = User.where(id: params[:id])
       @filters = request.query_parameters[:filter]
-      # p !@filters
-      if !@filters
+      @years = request.query_parameters[:year]
+
+      if !@filters && !@years
+          @releases = Shoe.select(:release_year).order(:release_year => :desc).distinct
           p 'going to the no filters'
           if request.query_parameters[:sort] == "r_date"
             @shoes = Shoe.where(user_id: params[:id]).order(created_at: :desc)
@@ -27,24 +29,43 @@ class OwnersController < ApplicationController
           else
             @shoes = Shoe.where(user_id: params[:id])
           end
-      else
-          p 'going into the filters'
-          p @filters
+
+      elsif @filters && !@years
+          @releases = Shoe.select(:release_year).order(:release_year => :desc).distinct
           if request.query_parameters[:sort] == "r_date"
-            @shoes = Shoe.where(user_id: params[:id]).order(created_at: :desc)
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order(created_at: :desc)
 
           elsif request.query_parameters[:sort] == "o_date"
-            @shoes = Shoe.where(user_id: params[:id]).order(created_at: :asc)
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order(created_at: :asc)
 
           elsif request.query_parameters[:sort] == "h_price"
-            @shoes = Shoe.where(user_id: params[:id]).order('cost_price::integer DESC')
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order('cost_price::integer DESC')
 
           elsif request.query_parameters[:sort] == "l_price"
-            @shoes = Shoe.where(user_id: params[:id]).order('cost_price::integer ASC')
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order('cost_price::integer ASC')
 
           else
             @shoes = Shoe.where(user_id: params[:id], brand_id: @filters)
           end
+
+      else
+        @releases = Shoe.select(:release_year).order(:release_year => :desc).distinct
+          if request.query_parameters[:sort] == "r_date"
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters, release_year: @years).order(created_at: :desc)
+
+          elsif request.query_parameters[:sort] == "o_date"
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters, release_year: @years).order(created_at: :asc)
+
+          elsif request.query_parameters[:sort] == "h_price"
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters, release_year: @years).order('cost_price::integer DESC')
+
+          elsif request.query_parameters[:sort] == "l_price"
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters, release_year: @years).order('cost_price::integer ASC')
+
+          else
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters, release_year: @years)
+          end
+
       end
     end
 
