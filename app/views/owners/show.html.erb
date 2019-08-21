@@ -1,18 +1,43 @@
-<h1> Owner's Shoes Collection </h1>
 
-<% @shoes.each do |shoe| %>
-	<p> Owner: <%= shoe.user.name %>
-	<p> Name: <%= shoe.name %> </p>
-	<p> Brand: <%= shoe.brand.name %> </p>
-	<p> Size: <%= shoe.size.size %> </p>
-	<p> Colour: <%= shoe.color %> </p>
-	<p> Release year: <%= shoe.release_year %> </p>
-	<p> Price: $<%= shoe.cost_price %> </p>
-	<p> Description: <%= shoe.description %> </p>
-	<% if user_signed_in? && current_user.id == shoe.user.id %>
-	<p> <%= link_to 'Show', shoe_path(shoe) %> || <%= link_to 'Edit', edit_shoe_path(shoe) %> || <%= link_to 'Delete', shoe_path(shoe), method: :delete, data: {confirm: 'Are you sure you want to delete???'} %> </p>
-	<% end %>
-	<br>
-<% end %>
+<%= render "layouts/header" %>
 
-<%= link_to 'Back', shoes_path %>
+<!-- main content -->
+<div class="collection-owner">
+	<h2><%= @owner[0].name %>'s Collection</h2>
+</div>
+<div class="main-content container-fluid">
+	<div class="row">
+<!-- filtering column -->
+		<div class="col-6 col-md-3 filter">
+			<div class="filter-header">
+				<h1>FILTER</h1>
+			</div>
+<!-- sort form -->
+			<div class="sort-form-container">
+				<form method="GET" action="/owners/<%= @id %>" id="sorting-form">
+					<label>Sort By: </label>
+						<select name="sort">
+						<option value="r_date">Newest</option>
+						<option value="o_date">Oldest</option>
+							<option value="h_price">Highest Price</option>
+						<option value="l_price">Lowest Price</option>
+						</select>
+					<button type="submit">Sort</button>
+				</form>
+			</div>
+		</div>
+<!-- shoe column -->
+		<div class="col-12 col-md-9 collection">
+			<% @shoes.each do |shoe| %>
+			<%= link_to shoe_path(shoe) do %>
+			<div class="shoe-container" style=
+				"background-image: url(<%= shoe.image_url %>)">
+				<div class="shoe-caption">
+					<p><span class="bold"><%= shoe.name %></span></p>
+					<p><%= shoe.brand.name %></p>
+				</div>
+			</div>
+			<% end %>
+			<% end %>
+		</div>
+	</div>

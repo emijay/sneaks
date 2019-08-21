@@ -1,7 +1,7 @@
 class ShoesController < ApplicationController
 
     def index
-      @shoes = Shoe.all
+      @shoes = Shoe.select(:user_id).distinct
     end
 
     def show
@@ -20,7 +20,7 @@ class ShoesController < ApplicationController
       @shoe = Shoe.new(shoe_params)
       @shoe.save
 
-      redirect_to shoes_path
+      redirect_to owner_path(current_user.id)
 
     end
 
@@ -43,6 +43,8 @@ class ShoesController < ApplicationController
 
       redirect_to shoes_path
     end
+
+
 
 
     private

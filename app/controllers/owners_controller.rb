@@ -5,7 +5,26 @@ class OwnersController < ApplicationController
     end
 
     def show
-      @shoes = Shoe.where(user_id: params[:id])
+      @id = params[:id].to_s
+      @owner = User.where(id: params[:id])
+
+      if request.query_parameters[:sort] == "r_date"
+        @shoes = Shoe.where(user_id: params[:id]).order(created_at: :desc)
+
+      elsif request.query_parameters[:sort] == "o_date"
+        @shoes = Shoe.where(user_id: params[:id]).order(created_at: :asc)
+
+      elsif request.query_parameters[:sort] == "h_price"
+        @shoes = Shoe.where(user_id: params[:id]).order('cost_price::integer DESC')
+
+      elsif request.query_parameters[:sort] == "l_price"
+        @shoes = Shoe.where(user_id: params[:id]).order('cost_price::integer ASC')
+
+      else
+        @shoes = Shoe.where(user_id: params[:id])
+
+      end
+
     end
 
     def new

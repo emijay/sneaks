@@ -13,17 +13,46 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+    font-family: 'BebasNeueBook', sans-serif;
+    src: font-url('BebasNeueBook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import "bootstrap";
 
 $brand-color: #fff952;
 
 body {
   font-family: 'Montserrat', sans-serif !important;
+
   h1 {
+  	text-align: center;
   	font-weight: 400;
   }
+
+  h2 {
+  	display: inline-block;
+  	margin: 0 auto;
+  	text-align: center;
+  	font-weight: 300;
+  	font-size: 30px;
+  	padding-bottom: 5px;
+  	border-bottom: 1px solid black;
+  }
+
   p {
   	font-weight: 300;
+  	margin-bottom: 0;
+  }
+
+  a {
+  	color: black;
+  }
+
+  a:hover {
+  	color: $brand-color;
   }
 }
 
@@ -51,21 +80,74 @@ div#navbarToggleExternalContent {
 .logo-container {
 	height: 100px;
   width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   background-image: url(logo.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-// shoes
-.col-12.col-md-8 {
-    background-color: pink;
-    margin: 20px auto;
+// individual collection page
+.collection-owner {
+	display: flex;
+	justify-content: center;
+	margin: 50px auto 0 auto;
 }
 
-// filters
-.col-6.col-md-4 {
-	background-color: $brand-color;
+// filters column
+.filter {
 	margin: 20px auto;
+	text-align: center;
+}
+
+.filter-header {
+	background: linear-gradient(to bottom, $brand-color 0%, $brand-color 100%) no-repeat;
+	background-size: (40% 57%);
+	background-position: bottom;
+
+	h1 {
+		font-family: 'BebasNeueBook', sans-serif;
+	}
+}
+
+#sorting-form {
+	select:active, select:focus, button {
+		outline: none!important;
+	}
+}
+
+//shoe cards
+.collection {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shoe-container {
+	display: inline-block;
+	margin: 10px 50px;
+	position: relative;
+	width: 400px;
+	height: 400px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.shoe-caption {
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	width: 100%;
+
+	.bold {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}
+
+@media (max-width: 480px) {
+	.shoe-container {
+		margin: 0;
+	}
 }
