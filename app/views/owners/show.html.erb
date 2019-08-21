@@ -3,9 +3,6 @@
 <form method="GET" action="/owners/<%= @id %>">
 	<label>Sort By: </label>
 	<select name="sort">
-	  <!-- <option value="">Sort By</option>
-	  <option value="id">Id</option>
-	  <option value="caption">Caption</option> -->
 	  <option value="r_date">Recent</option>
 	  <option value="o_date">Oldest</option>
 	  <option value="h_price">Highest Price</option>
@@ -31,3 +28,19 @@
 <% end %>
 
 <%= link_to 'Back', shoes_path %>
+<br>
+<br>
+
+<%= form_with scope: :filters, url: owner_path(@id), local: true do |form| %>
+
+	<%= form.collection_check_boxes(:brand_ids, @brands, :id, :name) do |b| %>
+			<div>
+				<%= b.check_box %><%= b.label { b.text } %>
+			</div>
+   <% end %>
+
+	<p>
+    <%= form.submit :'Filter' %>
+  </p>
+
+<% end %>
