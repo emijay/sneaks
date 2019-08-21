@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+    font-family: 'BebasNeueBook', sans-serif;
+    src: font-url('BebasNeueBook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import "bootstrap";
+
+$brand-color: #fff952;
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+
+  h1 {
+  	text-align: center;
+  	font-weight: 400;
+  }
+
+  h2 {
+  	display: inline-block;
+  	margin: 0 auto;
+  	text-align: center;
+  	font-weight: 300;
+  	font-size: 30px;
+  	padding-bottom: 5px;
+  	border-bottom: 1px solid black;
+  }
+
+  p {
+  	font-weight: 300;
+  	margin-bottom: 0;
+  }
+
+  a {
+  	color: black;
+  }
+
+  a:hover {
+  	color: $brand-color;
+  }
+}
+
+div#navbarToggleExternalContent {
+  text-align: center;
+}
+
+.navbar-light .navbar-toggler {
+  margin: 0 auto;
+  border-color: rgba(0,0,0,0)!important;
+}
+
+.bg-light {
+  background-color: #ffffff!important;
+}
+
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke= 'rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")!important;
+ }
+
+.navbar-toggler:focus, .navbar-toggler:active {
+	outline: none!important;
+ }
+
+.logo-container {
+	height: 100px;
+  width: 400px;
+  margin: 20px auto;
+  background-image: url(logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// individual collection page
+.collection-owner {
+	display: flex;
+	justify-content: center;
+	margin: 50px auto 0 auto;
+}
+
+// filters column
+.filter {
+	margin: 20px auto;
+	text-align: center;
+}
+
+.filter-header {
+	background: linear-gradient(to bottom, $brand-color 0%, $brand-color 100%) no-repeat;
+	background-size: (40% 57%);
+	background-position: bottom;
+
+	h1 {
+		font-family: 'BebasNeueBook', sans-serif;
+	}
+}
+
+#sorting-form {
+	select:active, select:focus, button {
+		outline: none!important;
+	}
+}
+
+//shoe cards
+.collection {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shoe-container {
+	display: inline-block;
+	margin: 10px 50px;
+	position: relative;
+	width: 400px;
+	height: 400px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.shoe-caption {
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	width: 100%;
+
+	.bold {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}
+
+@media (max-width: 480px) {
+	.shoe-container {
+		margin: 0;
+	}
+}

@@ -6,7 +6,11 @@ class OwnersController < ApplicationController
 
     def show
       @id = params[:id].to_s
+
       @brands = Brand.all
+
+      @owner = User.where(id: params[:id])
+
       if request.query_parameters[:sort] == "r_date"
         @shoes = Shoe.where(user_id: params[:id]).order(created_at: :desc)
 
