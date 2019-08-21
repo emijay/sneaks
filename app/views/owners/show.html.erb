@@ -1,3 +1,26 @@
+
+
+<form method="GET" action="/owners/<%= @id %>" id="filter-form">
+	<label>Filter By Brands: </label>
+			<% @brands.each do |brand| %>
+					<br>
+					<input type='checkbox' value='<%=brand.id%>' name="filter[]"> <%= brand.name %></input>
+			<% end %>
+			<br>
+			<br>
+	<label>Filter By Years: </label>
+			<br>
+			<% @releases.each do |release| %>
+					<input type='checkbox' value='<%=release.release_year%>' name="year[]"> <%= release.release_year %></input>
+					<br>
+			<% end %>
+	<button type="submit">Filter</button>
+</form>
+	<%= link_to 'Reset', owner_path(@id) %>
+
+
+
+
 <%= render "layouts/header" %>
 
 <!-- main content -->
