@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_044946) do
+ActiveRecord::Schema.define(version: 2019_08_21_120227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: :cascade do |t|
+    t.text "title"
+    t.text "content"
+    t.text "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "brands", force: :cascade do |t|
     t.text "name"
@@ -28,7 +36,10 @@ ActiveRecord::Schema.define(version: 2019_08_20_044946) do
     t.text "style"
     t.text "description"
     t.text "cost_price"
-    t.text "image_url"
+    t.text "first_image_url"
+    t.text "second_image_url"
+    t.text "third_image_url"
+    t.text "fourth_image_url"
     t.bigint "brand_id"
     t.bigint "size_id"
     t.datetime "created_at", null: false

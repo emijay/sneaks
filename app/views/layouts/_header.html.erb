@@ -7,13 +7,15 @@
 							<h4> You are signed in as: <%= current_user.name %></h4>
 							<p class="text-uppercase d-block"><%= link_to 'View Your Collection', owner_path(current_user.id) %></p>
 				      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
+				      <p class="text-uppercase d-block"><%= link_to 'View other collection', owners_path%></p>
 					<% end %>
 
 			    <p class="text-uppercase d-block">
 			    	<% if user_signed_in? %>
 								<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 						<% else %>
-								<%= link_to 'User Sign in', new_user_session_path %>
+							  <p class="text-uppercase d-block"><%= link_to 'User Sign in', new_user_session_path %></p>
+								<p class="text-uppercase d-block"><%= link_to 'View other collection', owners_path%></p>
 						<% end %>
 			    </p>
 

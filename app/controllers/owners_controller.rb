@@ -39,7 +39,7 @@ class OwnersController < ApplicationController
             @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order(created_at: :asc)
 
           elsif request.query_parameters[:sort] == "h_price"
-            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order('cost_price::integer DESC')
+            @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order( 'cost_price::integer DESC')
 
           elsif request.query_parameters[:sort] == "l_price"
             @shoes = Shoe.where(user_id: params[:id], brand_id: @filters).order('cost_price::integer ASC')

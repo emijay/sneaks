@@ -53,7 +53,7 @@
 			<% @shoes.each do |shoe| %>
 			<%= link_to shoe_path(shoe) do %>
 			<div class="shoe-container" style=
-				"background-image: url(<%= shoe.image_url %>)">
+				"background-image: url(<%= shoe.first_image_url %>)">
 				<div class="shoe-caption">
 					<p><span class="bold"><%= shoe.name %></span></p>
 					<p><%= shoe.brand.name %></p>

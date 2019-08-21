@@ -7,7 +7,10 @@ class Shoes < ActiveRecord::Migration[5.2]
       t.text :style
       t.text :description
       t.text :cost_price
-      t.text :image_url
+      t.text :first_image_url
+      t.text :second_image_url
+      t.text :third_image_url
+      t.text :fourth_image_url
       t.references :brand
       t.references :size
       t.timestamps
