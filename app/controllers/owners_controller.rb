@@ -70,8 +70,7 @@ class OwnersController < ApplicationController
     end
 
     def new
-      @brands = Brand.all
-      @sizes = Size.all
+
     end
 
     def create

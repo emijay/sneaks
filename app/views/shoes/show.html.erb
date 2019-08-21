@@ -1,7 +1,6 @@
 <%= render "layouts/header" %>
 
-<div class="shoe-main-content container">
-
+<div class="shoe-main-content container-fluid">
 	<div class="row d-flex align-items-center">
 
 		<div class="col-12 col-md-6 offset-md-1">
@@ -33,7 +32,38 @@
       <% end %>
 
 		<%= button_to "Back to Collection", owner_path(@shoe.user_id), method: :get %>
-
 		</div close shoe description div>
-	</div close row>
+	</div close shoe pic and description row>
+
+	<div class="row">
+		<div class="col-12 d-flex justify-content-center">
+			<h4>ON THE MARKET</h4>
+		</div>
+	</div closing price header row>
+
+	<div class="row">
+		<div class="col-12 shoe-market-price">
+			<div class="card">
+  			<div class="card-body">
+  				<%= image_tag("stockx.png") %>
+    			<h5>$<%= @stockx %></h5>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+  				<%= image_tag("goat.png") %>
+    			<h5>$<%= @goat %></h5>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+  				<%= image_tag("flightclub.png") %>
+    			<h5>$<%= @flightclub %></h5>
+  			</div>
+			</div>
+
+		</div closing market price col>
+	</div close price row>
 </div close main container>

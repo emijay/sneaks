@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+
  @font-face {
     font-family: 'BebasNeueBook', sans-serif;
     src: font-url('BebasNeueBook.woff') format('woff');
@@ -20,10 +22,9 @@
     font-style: normal;
 }
 
-@import "bootstrap";
-
 $brand-color: #fff952;
 $bebas: 'BebasNeueBook', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
 
 html {
 	overflow-y: scroll;
@@ -51,6 +52,19 @@ body {
   	font-size: 30px;
   }
 
+  h4 {
+  	// text-align: center;
+  	display: inline-block;
+  	padding-bottom: 5px;
+  	border-bottom: 2px solid $brand-color;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 40px;
+    margin: 20px auto;
+  }
+
   p {
   	font-weight: 300;
   	font-size: 12px;
@@ -72,6 +86,11 @@ body {
   .bold {
 		font-weight: 500;
 		text-transform: uppercase;
+	}
+
+	.shadow {
+	border: solid 2px;
+	box-shadow: 15px 15px 0 0 #F9C397;
 	}
 }
 
@@ -197,12 +216,16 @@ div#navbarToggleExternalContent {
 		background-position: bottom;
 	}
 
-	input[type="submit"] {
+	input[type="submit"], button.submit-style {
+		font-family: $montserrat;
+		font-size: 15px;
+		font-weight: 300;
     margin: 30px 0;
     padding: 8px;
     border: none;
     background: black;
     color: $brand-color;
+    display: inline;
 	}
 }
 
@@ -215,9 +238,49 @@ div#navbarToggleExternalContent {
   background-repeat: no-repeat;
 }
 
+.shoe-market-price {
+	// background-color: $brand-color;
+    display: flex;
+    justify-content: center;
+
+		.card {
+			width: 20%;
+			display: inline-block;
+			margin: 10px;
+
+			.card-body {
+				text-align: center;
+			}
+
+			img {
+				height: 50px;
+			}
+		}
+}
+
 // edit individual shoe page //
 #edit-form {
 	margin-top: 10px;
+
+	p {
+    margin: 20px 0;
+	}
+
+	label {
+		font-weight: 500;
+    margin: 0 auto;
+	}
+
+	input {
+    font-weight: 300;
+		border: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid $brand-color;
+	}
+
+	input[type="submit"] {
+		margin: 0;
+	}
 }
 
 // media queries //
@@ -235,6 +298,15 @@ div#navbarToggleExternalContent {
 
 		h3 {
 			font-size: 20px;
+		}
+	}
+
+	.shoe-market-price {
+		flex-wrap: wrap;
+
+		.card {
+			width: 100%;
+			display: block;
 		}
 	}
 }
