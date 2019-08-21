@@ -59,6 +59,12 @@ body {
   	border-bottom: 2px solid $brand-color;
   }
 
+  h5 {
+    text-align: center;
+    font-size: 40px;
+    margin: 20px auto;
+  }
+
   p {
   	font-weight: 300;
   	font-size: 12px;
@@ -240,6 +246,15 @@ div#navbarToggleExternalContent {
 		.card {
 			width: 20%;
 			display: inline-block;
+			margin: 10px;
+
+			.card-body {
+				text-align: center;
+			}
+
+			img {
+				height: 50px;
+			}
 		}
 }
 
