@@ -28,18 +28,22 @@ body {
   font-family: 'Montserrat', sans-serif !important;
 
   h1 {
-  	text-align: center;
   	font-weight: 400;
+  	text-align: center;
   }
 
   h2 {
-  	display: inline-block;
-  	margin: 0 auto;
-  	text-align: center;
   	font-weight: 300;
   	font-size: 20px;
+  	text-align: center;
+  	margin: 0 auto;
+  	display: inline-block;
   	padding-bottom: 5px;
   	border-bottom: 2px solid $brand-color;
+  }
+
+  h3 {
+  	font-size: 30px;
   }
 
   p {
@@ -55,6 +59,11 @@ body {
   a:hover {
   	color: $brand-color;
   }
+
+  .bold {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
 }
 
 div#navbarToggleExternalContent {
@@ -88,7 +97,7 @@ div#navbarToggleExternalContent {
   background-repeat: no-repeat;
 }
 
-// individual collection page
+// individual collection page //
 .collection-owner {
 	display: flex;
 	justify-content: center;
@@ -145,15 +154,55 @@ div#navbarToggleExternalContent {
 	bottom: 10px;
 	text-align: center;
 	width: 100%;
+}
 
-	.bold {
-		font-weight: 500;
-		text-transform: uppercase;
+// individual shoe page //
+.shoe-main-content {
+	h3 {
+		margin-bottom: 20px;
+  	display: inline-block;
+  	padding-bottom: 2px;
+  	border-bottom: 2px solid $brand-color;
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		list-style-type: none;
+		margin: 10px auto;
 	}
 }
 
+.shoe-picture {
+	margin: 0 auto;
+  width: 100%;
+  height: 500px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// media queries //
 @media (max-width: 480px) {
 	.shoe-container {
 		margin: 0;
+	}
+
+	.shoe-picture {
+		height: 250px;
+	}
+
+	.shoe-main-content {
+		text-align: center;
+
+		h3 {
+			font-size: 20px;
+		}
 	}
 }

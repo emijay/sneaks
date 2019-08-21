@@ -1,12 +1,26 @@
-<h1> Individual shoe page (show page) </h1>
+<%= render "layouts/header" %>
 
-<p> Owner: <%= @shoe.user.name %></p>
-<p> Name: <%= @shoe.name %> </p>
-<p> Brand: <%= @shoe.brand.name %> </p>
-<p> Size: <%= @shoe.size.size %> </p>
-<p> Colour: <%= @shoe.color %> </p>
-<p> Release year: <%= @shoe.release_year %> </p>
-<p> Price: $<%= @shoe.cost_price %> </p>
-<p> Description: <%= @shoe.description %> </p>
+<div class="shoe-main-content container-fluid">
 
-<p> <%= link_to 'Back', shoes_path %> </p>
+	<div class="row d-flex align-items-center">
+
+		<div class="col-12 col-md-6 offset-md-1">
+			<div class="shoe-picture" style=
+				"background-image: url(<%= @shoe.image_url %>)">
+			</div close shoe picture div>
+		</div close shoe picture+ name div>
+
+		<div class="col-12 col-md-4 offset-md-0.5">
+			<h3><%= @shoe.name %></h3>
+			<ul>
+				<li><p><span class="bold">Brand:</span> <%= @shoe.brand.name %></p></li>
+				<li><p><span class="bold">Size:</span> <%= @shoe.size.size %> </p></li>
+				<li><p><span class="bold">Colour:</span> <%= @shoe.color %> </p></li>
+				<li><p><span class="bold">Release Year:</span><%= @shoe.release_year %></p></li>
+				<li><p><span class="bold">Price:</span> $<%= @shoe.cost_price.tr('$', '') %></p></li>
+			</ul>
+			<!-- <p> Description: <%= @shoe.description %> </p> -->
+		</div close shoe description div>
+
+	</div close row>
+</div close main container>
