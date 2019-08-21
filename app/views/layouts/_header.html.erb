@@ -5,6 +5,7 @@
 			  <div class="p-4">
 					<% if user_signed_in? %>
 							<h4> You are signed in as: <%= current_user.name %></h4>
+							<p class="text-uppercase d-block"><%= link_to 'View Your Collection', owner_path(current_user.id) %></p>
 				      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
 					<% end %>
 
