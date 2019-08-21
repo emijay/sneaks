@@ -6,8 +6,7 @@ class OwnersController < ApplicationController
 
     def show
       @id = params[:id].to_s
-      @owner = User.where(user_id: params[:id])
-      # elise added @owner - to show the name on the page
+      @owner = User.where(id: params[:id])
 
       if request.query_parameters[:sort] == "r_date"
         @shoes = Shoe.where(user_id: params[:id]).order(created_at: :desc)

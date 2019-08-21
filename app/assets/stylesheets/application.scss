@@ -80,7 +80,7 @@ div#navbarToggleExternalContent {
 .logo-container {
 	height: 100px;
   width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   background-image: url(logo.png);
   background-size: contain;
   background-position: center;
@@ -91,7 +91,7 @@ div#navbarToggleExternalContent {
 .collection-owner {
 	display: flex;
 	justify-content: center;
-	margin: 50px auto;
+	margin: 50px auto 0 auto;
 }
 
 // filters column
@@ -101,8 +101,18 @@ div#navbarToggleExternalContent {
 }
 
 .filter-header {
+	background: linear-gradient(to bottom, $brand-color 0%, $brand-color 100%) no-repeat;
+	background-size: (40% 57%);
+	background-position: bottom;
+
 	h1 {
 		font-family: 'BebasNeueBook', sans-serif;
+	}
+}
+
+#sorting-form {
+	select:active, select:focus, button {
+		outline: none!important;
 	}
 }
 

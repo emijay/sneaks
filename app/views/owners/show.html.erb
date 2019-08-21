@@ -1,26 +1,31 @@
 <%= render "layouts/header" %>
+
+<!-- main content -->
 <div class="collection-owner">
-	<h2><%= current_user.name %>'s Collection</h2>
-	<p><%= @shoes %></p>
+	<h2><%= @owner[0].name %>'s Collection</h2>
 </div>
-<!-- main content section -->
 <div class="main-content container-fluid">
 	<div class="row">
+<!-- filtering column -->
 		<div class="col-6 col-md-3 filter">
 			<div class="filter-header">
 				<h1>FILTER</h1>
 			</div>
-			<form method="GET" action="/owners/<%= @id %>">
-				<label>Sort By: </label>
-					<select name="sort">
-					<option value="r_date">Newest</option>
-					<option value="o_date">Oldest</option>
-						<option value="h_price">Highest Price</option>
-					<option value="l_price">Lowest Price</option>
-					</select>
-				<button type="submit">Sort</button>
-	</form>
+<!-- sort form -->
+			<div class="sort-form-container">
+				<form method="GET" action="/owners/<%= @id %>" id="sorting-form">
+					<label>Sort By: </label>
+						<select name="sort">
+						<option value="r_date">Newest</option>
+						<option value="o_date">Oldest</option>
+							<option value="h_price">Highest Price</option>
+						<option value="l_price">Lowest Price</option>
+						</select>
+					<button type="submit">Sort</button>
+				</form>
+			</div>
 		</div>
+<!-- shoe column -->
 		<div class="col-12 col-md-9 collection">
 			<% @shoes.each do |shoe| %>
 			<%= link_to shoe_path(shoe) do %>
@@ -35,6 +40,3 @@
 			<% end %>
 		</div>
 	</div>
-
-	<br>
-	<%= link_to 'Back', shoes_path %>
