@@ -37,13 +37,14 @@ body {
   	margin: 0 auto;
   	text-align: center;
   	font-weight: 300;
-  	font-size: 30px;
+  	font-size: 20px;
   	padding-bottom: 5px;
-  	border-bottom: 1px solid black;
+  	border-bottom: 2px solid $brand-color;
   }
 
   p {
   	font-weight: 300;
+  	font-size: 12px;
   	margin-bottom: 0;
   }
 
@@ -78,9 +79,9 @@ div#navbarToggleExternalContent {
  }
 
 .logo-container {
-	height: 100px;
-  width: 400px;
-  margin: 20px auto;
+	height: 85px;
+  // width: 400px;
+  margin: 10px auto;
   background-image: url(logo.png);
   background-size: contain;
   background-position: center;
@@ -97,6 +98,7 @@ div#navbarToggleExternalContent {
 // filters column
 .filter {
 	margin: 20px auto;
+	padding: 45px;
 	text-align: center;
 }
 
@@ -107,10 +109,14 @@ div#navbarToggleExternalContent {
 
 	h1 {
 		font-family: 'BebasNeueBook', sans-serif;
+		font-size: 25px;
+		margin: 20px 0;
 	}
 }
 
 #sorting-form {
+	font-size: 13px;
+
 	select:active, select:focus, button {
 		outline: none!important;
 	}
@@ -125,13 +131,13 @@ div#navbarToggleExternalContent {
 
 .shoe-container {
 	display: inline-block;
-	margin: 10px 50px;
-	position: relative;
-	width: 400px;
-	height: 400px;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+  margin: 0px 40px;
+  position: relative;
+  width: 260px;
+  height: 280px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .shoe-caption {
