@@ -1,5 +1,6 @@
 <%= render "layouts/header" %>
 
+<%= link_to 'Add new upcoming shoe', new_upcoming_shoe_path %><br>
 
 <h2> Blogs </h2>
 <% @blogs.each do |blog| %>
@@ -10,7 +11,17 @@
 <% end %>
 
 <br>
-<h2> New releases </h2>
+<h2> Upcoming Releases </h2>
+<% @upcoming_shoes.shuffle[0,3].each do |upcoming_shoe| %>
+
+	<p> Shoe image url: <%= upcoming_shoe.image_url %></p>
+	<p> Shoe name: <%= upcoming_shoe.name %> </p>
+	<p> Shoe brand: <%= upcoming_shoe.brand.name %> </p>
+	<p> Shoe release date: <%= upcoming_shoe.release_date %> </p>
+	<p> Shoe retail price: <%= upcoming_shoe.retail_price %></p>
+	<br>
+<% end %>
+<%= link_to 'View all upcoming releases', upcoming_shoes_path %>
 <br>
 
 <h2> Featured Owners collection </h2>
@@ -26,7 +37,7 @@
 <%= link_to 'View all collection', owners_path%>
 <br>
 
-<h2> Featured Sneakers collection </h2>
+<h2> Featured Sneakers </h2>
 
 <% @shoes.shuffle[0,3].each do |shoe| %>
 	<p>Shoe image: <%= shoe.first_image_url %> </p>

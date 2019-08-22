@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :owners
   resources :blogs
   resources :homes
+  resources :upcoming_shoes
 end

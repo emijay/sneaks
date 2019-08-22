@@ -3,6 +3,7 @@ class HomesController < ApplicationController
     def index
       @shoes = Shoe.all.distinct
       @blogs = Blog.all
+      @upcoming_shoes = UpcomingShoe.all
 
     end
 
