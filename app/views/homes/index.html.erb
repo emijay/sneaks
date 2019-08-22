@@ -1,11 +1,6 @@
 <%= render "layouts/header" %>
 
 <!-- blog -->
-
-<!-- <div class="section-header">
-	<h2>The Fresh Feed</h2>
-</div> -->
-
 	<div class="container-fluid blog">
 		<div class="row">
 			<div class="col-md-7 px-0 feature-article-col">
@@ -99,39 +94,26 @@
 	<h2>Featured User Collections</h2>
 </div>
 
-<div class="col-md-4 col-sm-6">
-             <div class="card-container manual-flip">
-                <div class="card">
-                	<div class="front">
-                        <div class="content">
-                            <div class="main">
-                                <h3 class="name">Andrew Mike</h3>
-                                <p class="profession">Web Developer</p>
-                                <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm in that two seat Lambo"</p>
-                            </div>
-                            <div class="footer">
-                                <button class="btn btn-simple" onclick="rotateCard(this)">
-                                    <i class="fa fa-mail-forward"></i> Manual Rotation
-                                </button>
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                    <div class="back">
-                        <div class="header">
-                            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h4 class="text-center">Job Description</h4>
-                                <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
-                                <i class="fa fa-reply"></i> Back
-                            </button>
-                        </div>
-                    </div> <!-- end back panel -->
-                </div> <!-- end card -->
-            </div> <!-- end card-container -->
-        </div> <!-- end col sm 3 -->
+<div class="container-fluid user-collections">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card-container manual-flip">
+				<div class="card">
+					<div class="front">
+						Hello!
+						<div class="footer">
+							<button class="btn btn-simple" onclick="rotateCard(this)">Manual Rotation</button>
+						</div> <!-- end footer -->
+					</div> <!-- end front panel -->
+
+				  <div class="back">
+						Why got nothing one.
+						<div class="footer">
+							<button class="btn btn-simple" title="Flip Card" onclick="rotateCard(this)">Back</button>
+						</div>	<!-- end footer -->
+					</div> <!-- end back panel -->
+				</div> <!-- end card -->
+			</div> <!-- end card-container -->
+		</div> <!-- close user column -->
+	</div> <!-- close user collection row -->
+</div> <!-- close user collection container -->
