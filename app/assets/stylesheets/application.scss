@@ -135,10 +135,6 @@ div#navbarToggleExternalContent {
 	}
 }
 
-// .blog-section {
-// 	margin-top: 40px;
-// }
-
 .feature-article-col, .side-article-col {
 
 	.feature-article-wrapper {
@@ -174,9 +170,38 @@ div#navbarToggleExternalContent {
 		h3 {
 			font-size: 20px;
 		}
+	}
+}
 
+.releases {
+	img.card-img-top {
+    width: 50%;
+    margin: 0 auto;
 	}
 
+	.card-body {
+		text-align: center;
+	}
+
+	.card-footer {
+		background-color: $brand-color;
+		text-align: center;
+
+		p {
+			// font-family: $montserrat;
+			text-transform: uppercase;
+			font-size: 13px;
+			letter-spacing: 2px;
+		}
+	}
+
+	p.card-text {
+		font-size: 15px;
+	}
+
+	h5.card-title {
+    font-size: 20px;
+	}
 }
 
 // COLLECTION PAGE //

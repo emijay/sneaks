@@ -1,10 +1,11 @@
 <%= render "layouts/header" %>
 
+<!-- blog -->
 <div class="section-header">
 	<h2>Sneakerhead News</h2>
 </div>
 
-<section class="blog-section">
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-7 px-0 feature-article-col">
@@ -24,35 +25,71 @@
 
 			<div class="col-md-5 px-0 side-article-col">
 			<div class="side-article-wrapper" style=
-				"background-image: url(<%= @blogs[1].image_url %>)">
+				"background-image: url(<%= @blogs[3].image_url %>)">
 					<div class="article-inner">
 						<div class="feature-article-title">
-              <h3><a href="lol.html" target="_self"><%= @blogs[1].title %></a></h3>
+              <h3><a href="lol.html" target="_self"><%= @blogs[3].title %></a></h3>
           	</div close feature article title>
 
           	<div class="feature-article-date">
-              <p><a href="lol.html" target="_self"><%= @blogs[1].created_at.strftime("%B %e, %Y	") %></a></p>
+              <p><a href="lol.html" target="_self"><%= @blogs[3].created_at.strftime("%B %e, %Y	") %></a></p>
           	</div close feature article date>
 					</div close feature article inner>
 				</div close feature article wrapper>
 
 				<div class="side-article-wrapper" style=
-				"background-image: url(<%= @blogs[2].image_url %>)">
+				"background-image: url(<%= @blogs[5].image_url %>)">
 					<div class="article-inner">
 						<div class="feature-article-title">
-              <h3><a href="lol.html" target="_self"><%= @blogs[2].title %></a></h3>
+              <h3><a href="lol.html" target="_self"><%= @blogs[5].title %></a></h3>
           	</div close feature article title>
 
           	<div class="feature-article-date">
-              <p><a href="lol.html" target="_self"><%= @blogs[2].created_at.strftime("%B %e, %Y	") %></a></p>
+              <p><a href="lol.html" target="_self"><%= @blogs[5].created_at.strftime("%B %e, %Y	") %></a></p>
           	</div close feature article date>
 					</div close feature article inner>
 				</div close feature article wrapper>
 			</div close side article col>
 		</div close blog row>
 	</div close blog container>
-</section close blog section>
 
+<!-- upcoming sneaker releases -->
 <div class="section-header">
 	<h2>Sneak Peeks: Upcoming Drops</h2>
 </div>
+
+<div class="container-fluid releases">
+	<div class="row">
+		<div class="card-group">
+			<div class="card">
+				<img class="card-img-top" src= "<%= @upcoming_shoes[0].image_url %>" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title"><%= @upcoming_shoes[0].name %></h5>
+				</div close card body>
+				<div class="card-footer">
+					<p><span class="bold">Drop Date:</span> <%= @upcoming_shoes[0].release_date %></p>
+				</div close card footer>
+			</div close card>
+
+			<div class="card">
+				<img class="card-img-top" src="<%= @upcoming_shoes[1].image_url %>" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title"><%= @upcoming_shoes[1].name %></h5>
+				</div close card body>
+				<div class="card-footer">
+					<p><span class="bold">Drop Date:</span> <%= @upcoming_shoes[1].release_date %></p>
+				</div close card footer>
+			</div close card>
+
+			<div class="card">
+				<img class="card-img-top" src="<%= @upcoming_shoes[3].image_url %>" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title"><%= @upcoming_shoes[3].name %></h5>
+				</div close card body>
+				<div class="card-footer">
+					<p><span class="bold">Drop Date:</span> <%= @upcoming_shoes[3].release_date %></p>
+				</div close card footer>
+			</div close card>
+		</div close card group>
+	</div close new releases row>
+</div close release container>
