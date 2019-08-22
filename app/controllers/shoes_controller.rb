@@ -18,16 +18,14 @@ class ShoesController < ApplicationController
       @rows = @arrays.select { |item| item["size"] == @shoe.size.size }
 
       if @rows.empty?
-        puts "no results"
         @stockx = "No Results"
         @goat = "No Results"
         @flightclub = "No Results"
 
       else
-        puts 'result~~~~~~~'
-      @stockx = "$#{@rows[0]["stockx"]}"
-      @goat = "$#{@rows[0]["goat"]}"
-      @flightclub = "$#{@rows[0]["flightclub"]}"
+        @stockx = "$#{@rows[0]["stockx"]}"
+        @goat = "$#{@rows[0]["goat"]}"
+        @flightclub = "$#{@rows[0]["flightclub"]}"
 
       puts "StockX Price: #{@stockx}"
       puts "GOAT Price: #{@goat}"

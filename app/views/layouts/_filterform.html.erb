@@ -1,0 +1,20 @@
+<form method="GET" action="/owners/<%= @id %>" id="filter-form">
+	<label>Filter By Brands: </label>
+	<% @brands.each do |brand| %>
+	<div class="filter-checkbox">
+		<input type='checkbox' value='<%=brand.id%>' name="filter[]"><p><%= brand.name %></p></input>
+	</div>
+	<% end %>
+	<br/>
+	<label>Filter By Release Year: </label>
+	<% @releases.each do |release| %>
+	<div class="filter-checkbox">
+		<input type='checkbox' value='<%=release.release_year%>' name="year[]"><p><%= release.release_year %></p></input>
+	</div>
+	<% end %>
+	<br/>
+	<button type="submit">Filter</button>
+	<%= link_to owner_path(@id) do%>
+	<button>Reset</button>
+	<% end %>
+</form>

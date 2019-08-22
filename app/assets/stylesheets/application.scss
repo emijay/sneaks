@@ -53,7 +53,6 @@ body {
   }
 
   h4 {
-  	// text-align: center;
   	display: inline-block;
   	padding-bottom: 5px;
   	border-bottom: 2px solid $brand-color;
@@ -117,7 +116,6 @@ div#navbarToggleExternalContent {
 
 .logo-container {
 	height: 85px;
-  // width: 400px;
   margin: 10px auto;
   background-image: url(logo.png);
   background-size: contain;
@@ -137,6 +135,15 @@ div#navbarToggleExternalContent {
 	margin: 20px auto;
 	padding: 45px;
 	text-align: center;
+
+	button {
+		font-family: $montserrat;
+		font-size: 15px;
+		padding: 2px 5px;
+		border: none;
+    background: black;
+    color: $brand-color;
+	}
 }
 
 .filter-header {
@@ -156,6 +163,23 @@ div#navbarToggleExternalContent {
 
 	select:active, select:focus, button {
 		outline: none!important;
+	}
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 4px auto;
+
+	p {
+		display: inline-block;
+		font-weight: 300;
+		font-size: 15px;
+	}
+
+	input[type="checkbox"] {
+    margin-right: 5px;
 	}
 }
 
@@ -239,23 +263,23 @@ div#navbarToggleExternalContent {
 }
 
 .shoe-market-price {
-	// background-color: $brand-color;
-    display: flex;
-    justify-content: center;
 
-		.card {
-			width: 20%;
-			display: inline-block;
-			margin: 10px;
+  display: flex;
+  justify-content: center;
 
-			.card-body {
-				text-align: center;
-			}
+	.card {
+		width: 20%;
+		display: inline-block;
+		margin: 10px;
 
-			img {
-				height: 50px;
-			}
+		.card-body {
+			text-align: center;
 		}
+
+		img {
+			height: 50px;
+		}
+	}
 }
 
 // edit individual shoe page //
@@ -299,6 +323,10 @@ div#navbarToggleExternalContent {
 		h3 {
 			font-size: 20px;
 		}
+	}
+
+	.col-12.col-md-9.collection {
+    justify-content: center;
 	}
 
 	.shoe-market-price {

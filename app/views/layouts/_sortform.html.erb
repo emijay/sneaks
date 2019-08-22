@@ -1,0 +1,10 @@
+<form method="GET" action="/owners/<%= @id %>" id="sorting-form">
+	<label>Sort By: </label>
+	<select name="sort">
+		<option value="r_date">Newest</option>
+		<option value="o_date">Oldest</option>
+		<option value="h_price">Highest Price</option>
+		<option value="l_price">Lowest Price</option>
+	</select>
+	<button type="submit">Sort</button>
+</form>
