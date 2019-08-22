@@ -3,6 +3,16 @@
 <!-- main content section -->
 <div class="main-content container">
 
+	<% @shoes.each do |shoe| %>
+		<p>Shoe Name: <%= shoe.name %></p>
+		<p>Shoe style: <%= shoe.style %></p>
+		<p>Shoe image: <%= shoe.first_image_url %></p>
+		<p>Shoe release year: <%= shoe.release_year %> </p>
+		<%= link_to 'show this shoe', shoe_path(shoe) %>
+		<br>
+		<br>
+	<% end %>
+
 	<div class="row-fluid text-center">
 		<h2 class="mb-5">Latest News</h2>
 		<div class="row">
