@@ -1,5 +1,4 @@
 <%= render "layouts/header" %>
-<h1> homepage </h1>
 
 
 <h2> Blogs </h2>
@@ -14,20 +13,25 @@
 <h2> New releases </h2>
 <br>
 
+<h2> Featured Owners collection </h2>
+<% @shoes[0,3].each do |shoe| %>
+	<p>Onwer picture: <%= shoe.user.image_url %> </p>
+	<p>Owner: <%= link_to shoe.user.name, owner_path(shoe.user.id) %> </p>
+	<% @shoes[0,3].each do |shoe| %>
+		<p>Shoe image: <%= shoe.first_image_url %> </p>
+		<p>Shoe name: <%= link_to shoe.name, shoe_path(shoe) %> </p>
+	<% end %>
+	<br>
+<% end %>
+<%= link_to 'View all collection', owners_path%>
+<br>
+
 <h2> Featured Sneakers collection </h2>
 
-<% @shoes[0,3].each do |shoe| %>
+<% @shoes.shuffle[0,3].each do |shoe| %>
 	<p>Shoe image: <%= shoe.first_image_url %> </p>
 	<p>Shoe name: <%= shoe.name %> </p>
 	<p>Shoe description: <%= shoe.description %> </p>
 	<%= link_to 'Show this shoe', shoe_path(shoe) %>
 	<br>
-<% end %>
-
-
-<h2> Featured Owners collection </h2>
-<% @shoes[0,3].each do |shoe| %>
-	<p>Onwer picture: <%= shoe.user.image_url %> </p>
-	<p>Owner: <%= shoe.user.name %> </p>
-	<%= link_to 'Show this collection', owner_path(shoe.user.id) %>
 <% end %>
