@@ -61,7 +61,7 @@
 <div class="container-fluid releases">
 	<div class="row">
 		<div class="card-group">
-			<div class="card">
+			<div class="card border-light mx-2">
 				<img class="card-img-top" src= "<%= @upcoming_shoes[0].image_url %>" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title"><%= @upcoming_shoes[0].name %></h5>
@@ -71,7 +71,7 @@
 				</div close card footer>
 			</div close card>
 
-			<div class="card">
+			<div class="card border-light">
 				<img class="card-img-top" src="<%= @upcoming_shoes[1].image_url %>" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title"><%= @upcoming_shoes[1].name %></h5>
@@ -81,7 +81,7 @@
 				</div close card footer>
 			</div close card>
 
-			<div class="card">
+			<div class="card border-light mx-2">
 				<img class="card-img-top" src="<%= @upcoming_shoes[3].image_url %>" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title"><%= @upcoming_shoes[3].name %></h5>
@@ -98,3 +98,40 @@
 <div class="section-header">
 	<h2>Featured User Collections</h2>
 </div>
+
+<div class="col-md-4 col-sm-6">
+             <div class="card-container manual-flip">
+                <div class="card">
+                	<div class="front">
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Andrew Mike</h3>
+                                <p class="profession">Web Developer</p>
+                                <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm in that two seat Lambo"</p>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Manual Rotation
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Job Description</h4>
+                                <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
