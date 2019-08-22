@@ -7,19 +7,24 @@
 <div class="owner-main-content container-fluid">
 	<div class="row">
 <!-- filter column -->
-		<div class="col-6 col-md-3 filter">
+		<div class="col-12 col-md-3 filter">
+
 
 			<div class="filter-header">
-				<h1>FILTER</h1>
+				<h1>SORT</h1>
 			</div>
 
 			<div class="sort-form-container">
 				<%= render "layouts/sortform" %>
 			</div close sort form container>
 
+
+			<div class="filter-header">
+				<h1>FILTER</h1>
+			</div>
 			<p>
-  			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-   		 		Filter By Brand
+  			<button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   		 		Open Filters
   			</button>
 			</p>
 			<div class="collapse" id="collapseExample">

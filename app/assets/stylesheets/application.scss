@@ -78,7 +78,7 @@ body {
   	color: $brand-color;
   }
 
-  button:active, button:focus {
+  button:active, button:focus, input[type="submit"]:active, input[type="submit"]:focus, button.submit-style:active, button.submit-style:focus {
   	outline: none!important;
   }
 
@@ -143,6 +143,13 @@ div#navbarToggleExternalContent {
 		border: none;
     background: black;
     color: $brand-color;
+	}
+
+	.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+    color: black;
+    background-color: $brand-color;
+    border-color: $brand-color; /*set the color you want here*/
+    box-shadow: 0 0 0 0.2rem $brand-color;
 	}
 }
 
