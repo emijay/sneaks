@@ -3,19 +3,16 @@
 <!-- main content section -->
 <div class="main-content container-fluid">
 
-
 <div class="list-shoes">
   <ul>
-  	<% @shoes.each do |shoe| %>
-			<%= render shoe %>
-			<br>
-			<br>
-		<% end %>
+    <% @shoes.each do |shoe| %>
+      <%= render shoe %>
+      <br>
+    <% end %>
   </ul>
 
   <%= will_paginate @shoes, renderer: WillPaginateInfinite::InfinitePagination %>
 </div>
-
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

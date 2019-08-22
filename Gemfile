@@ -5,6 +5,10 @@ ruby '2.6.3'
 
 gem 'devise'
 
+gem 'coffee-script-source'
+gem 'bootstrap-will_paginate'
+gem 'therubyracer'
+gem 'execjs'
 gem 'will_paginate_infinite'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
