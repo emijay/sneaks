@@ -76,6 +76,7 @@ body {
 
   a:hover {
   	color: $brand-color;
+  	text-decoration: none;
   }
 
   button:active, button:focus, input[type="submit"]:active, input[type="submit"]:focus, button.submit-style:active, button.submit-style:focus {
@@ -123,7 +124,29 @@ div#navbarToggleExternalContent {
   background-repeat: no-repeat;
 }
 
-// individual collection page //
+// INDEX PAGE //
+.feature-article-col {
+
+	  position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+	.feature-article-inner {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    padding: 15px 30px;
+    left: 10%;
+    width: 80%;
+
+    h3 {
+    	font-size: 25px;
+    }
+	}
+}
+
+// COLLECTION PAGE //
 .collection-owner {
 	display: flex;
 	justify-content: center;

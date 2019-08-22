@@ -1,37 +1,30 @@
 <%= render "layouts/header" %>
 
+<br/>
+<!-- remove and apply margin later -->
 
-<h2> Blogs </h2>
-<% @blogs.each do |blog| %>
-	<p> Image: <%=blog.image_url%></p>
-	<p> Title: <%=blog.title%> </p>
-	<p>	Content: <%=blog.content%></p>
-<br>
-<% end %>
+<section class="blog-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-7 feature-article-col">
+				<div class="feature-article-wrapper">
 
-<br>
-<h2> New releases </h2>
-<br>
+					<div class="feature-article-img">
+						<img class="img-fluid" src= <%= @blogs[0].image_url %> alt="feature-top">
+					</div close feature article img>
 
-<h2> Featured Owners collection </h2>
-<% @shoes[0,3].each do |shoe| %>
-	<p>Onwer picture: <%= shoe.user.image_url %> </p>
-	<p>Owner: <%= link_to shoe.user.name, owner_path(shoe.user.id) %> </p>
-	<% @shoes[0,3].each do |shoe| %>
-		<p>Shoe image: <%= shoe.first_image_url %> </p>
-		<p>Shoe name: <%= link_to shoe.name, shoe_path(shoe) %> </p>
-	<% end %>
-	<br>
-<% end %>
-<%= link_to 'View all collection', owners_path%>
-<br>
+					<div class="feature-article-inner">
+						<div class="feature_article_title">
+              <h3><a href="lol.html" target="_self"><%= @blogs[0].title %></a></h3>
+          	</div close feature article title>
 
-<h2> Featured Sneakers collection </h2>
+          	<div class="feature_article_date">
+              <p><a href="lol.html" target="_self"><%= @blogs[0].created_at.strftime("%B %e, %Y	") %></a></p>
+          	</div close feature article date>
+					</div close feature article inner>
 
-<% @shoes.shuffle[0,3].each do |shoe| %>
-	<p>Shoe image: <%= shoe.first_image_url %> </p>
-	<p>Shoe name: <%= shoe.name %> </p>
-	<p>Shoe description: <%= shoe.description %> </p>
-	<%= link_to 'Show this shoe', shoe_path(shoe) %>
-	<br>
-<% end %>
+				</div close feature article wrapper>
+			</div close feature article col>
+		</div close blog row>
+	</div close blog container>
+</section close blog section>
