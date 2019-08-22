@@ -3,7 +3,7 @@
 	<div class="row d-flex align-items-start">
 		<div class="col-12 col-md-6 offset-md-1">
 			<div class="shoe-picture" style=
-				"background-image: url(<%= @shoe.image_url %>)">
+				"background-image: url(<%= @shoe.first_image_url %>)">
 			</div close shoe picture div>
 		</div close shoe picture+ name div>
 		<div class="col-12 col-md-4 ofset-md-0.5">
@@ -34,8 +34,20 @@
 					<%= form.text_field :cost_price %>
 				</p>
 				<p>
-					<%= form.label :image_url %><br>
-					<%= form.text_field :image_url %>
+					<%= form.label :first_image_url %><br>
+					<%= form.text_field :first_image_url %>
+				</p>
+				<p>
+					<%= form.label :second_image_url %><br>
+					<%= form.text_field :second_image_url %>
+				</p>
+				<p>
+					<%= form.label :third_image_url %><br>
+					<%= form.text_field :third_image_url %>
+				</p>
+				<p>
+					<%= form.label :fourth_image_url %><br>
+					<%= form.text_field :fourth_image_url %>
 				</p>
 				<p>
 					<%= form.label :description %><br>
