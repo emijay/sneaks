@@ -1,0 +1,10 @@
+<h1> Blog index page </h1>
+
+<% @blogs.each do|blog| %>
+<p> <%= blog.image_url %> </p>
+<p> <%= blog.title %> </p>
+<p> <%= blog.content %> </p>
+
+<% end %>
+
+<%= link_to 'Back', blogs_path %>
