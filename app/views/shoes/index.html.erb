@@ -3,28 +3,15 @@
 <!-- main content section -->
 <div class="main-content container-fluid">
 
-<div class="list-shoes">
-  <ul>
-    <% @shoes.each do |shoe| %>
-      <%= render shoe %>
-      <br>
-    <% end %>
-  </ul>
+	<div class="list-shoes">
+	  <ul>
+	    <% @shoes.each do |shoe| %>
+	      <%= render shoe %>
+	      <br>
+	    <% end %>
+	  </ul>
 
-  <%= will_paginate @shoes, renderer: WillPaginateInfinite::InfinitePagination %>
-</div>
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<% @shoes.shuffle.each do |shoe| %>
-	<p>Shoe Name: <%= shoe.name %></p>
-	<p>Shoe style: <%= shoe.style %></p>
-	<p>Shoe image: <%= shoe.first_image_url %></p>
-	<p>Shoe release year: <%= shoe.release_year %> </p>
-	<%= link_to 'show this shoe', shoe_path(shoe) %>
-	<br>
-	<br>
-<% end %>
-
+	  <%= will_paginate @shoes, renderer: WillPaginateInfinite::InfinitePagination %>
+	</div>
 
 </div>

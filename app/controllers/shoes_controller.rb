@@ -1,7 +1,7 @@
 class ShoesController < ApplicationController
 
     def index
-      @shoes = Shoe.all.paginate(:page => params[:page], :per_page => 3)
+      @shoes = Shoe.all.paginate(:page => params[:page], :per_page => 5)
 
       respond_to do |format|
         format.html
