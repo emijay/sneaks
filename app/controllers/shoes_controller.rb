@@ -11,7 +11,7 @@ class ShoesController < ApplicationController
 
     def show
       @shoe = Shoe.find(params[:id])
-
+      @images = [@shoe.first_image_url, @shoe.second_image_url, @shoe.third_image_url, @shoe.fourth_image_url]
       require 'net/http'
       require 'json'
       url = "https://api.suplexed.com/v2/pricer_web.php?p_type=snkrs&p_var1=#{@shoe.style}"
@@ -32,11 +32,10 @@ class ShoesController < ApplicationController
         @goat = "$#{@rows[0]["goat"]}"
         @flightclub = "$#{@rows[0]["flightclub"]}"
 
-      puts "StockX Price: #{@stockx}"
-      puts "GOAT Price: #{@goat}"
-      puts "FlightClub Price: #{@flightclub}"
-    end
-
+        puts "StockX Price: #{@stockx}"
+        puts "GOAT Price: #{@goat}"
+        puts "FlightClub Price: #{@flightclub}"
+        end
     end
 
     def new
