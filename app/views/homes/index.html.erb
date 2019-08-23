@@ -56,6 +56,7 @@
 <div class="container-fluid releases">
 	<div class="row">
 		<div class="card-group">
+
 			<div class="card border-light mx-2">
 				<img class="card-img-top" src= "<%= @upcoming_shoes[0].image_url %>" alt="Card image cap">
 				<div class="card-body">
@@ -93,34 +94,68 @@
 <div class="section-header">
 	<h2>Featured User Collections</h2>
 </div>
-
 <div class="container-fluid user-collections">
 	<div class="row">
+
+		<!-- start do loop here -->
 		<div class="col-md-4">
 			<div class="card-container manual-flip">
 				<div class="card">
 					<div class="front d-flex justify-content-center">
 						<div class="profile-pic">
-							<img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/US/en/999/UP4449-CUSA10926_00-AV00000000000003/1534386558000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" class="rounded-circle">
+							<img src="https://images-na.ssl-images-amazon.com/images/I/81PuQW8htIL._SX425_.jpg" class="rounded-circle">
 						</div> <!-- end profile pic -->
 
 						<div class="username">
 							<h2>@SampleUser</h2>
 						</div>
 
+						<div class="container user-stats">
+							<div class="row d-flex justify-content-center align-items-center">
+								<div class="col-6 stat-col">
+									<h4><span class="stat-header">Shoes in Collection</span> 89</h4>
+								</div><!-- close first stats col -->
+
+								<div class="col-6 stat-col">
+									<h4><span class="stat-header">Value of Collection</span> $459</h4>
+								</div><!-- close first stats col -->
+							</div> <!-- end stats row -->
+						</div> <!-- close stats container -->
+
 						<div class="footer">
-							<button class="btn btn-primary" onclick="rotateCard(this)">Click!</button>
+							<button class="btn btn-primary" onclick="rotateCard(this)"><p>Click to preview collection</p></button>
 						</div> <!-- end footer -->
 					</div> <!-- end front panel -->
 
-				  <div class="back">
-						This is the back
+				  <div class="back d-flex flex-wrap">
+
+						<div class="visit-button-container">
+							<button class="visit-button"><%= image_tag("view.png") %><p>VIEW ALL</p></button>
+							<!-- add in link to user collection for buttons -->
+						</div>
+
+				  	<div class="collection-square" style=
+				"background-image: url(https://media.hypedc.com/media/catalog/product/cache/1/small_image/750x/9df78eab33525d08d6e5fb8d27136e95/_/o/_o8a6348_baseline.jpg)">
+				  	</div>
+				  	<div class="collection-square" style=
+				"background-image: url(https://s1.r29static.com//bin/entry/2b2/0,0,2000,1050/x,80/2113506/image.jpg)">
+				  	</div>
+						<div class="collection-square" style=
+				"background-image: url(https://images.puma.net/images/366418/04/sv01/fnd/AUS/w/1000/h/1000/bg/255,255,255)">
+				  	</div>
+				  	<div class="collection-square" style=
+				"background-image: url(https://c.static-nike.com/a/images/c_limit,w_318,f_auto/t_product_v1/mbmn4yusr7kkkndboc94/joyride-run-flyknit-womens-running-shoe-ZPRFSV.jpg)">
+				  	</div>
+
 						<div class="footer">
-							<button class="btn btn-primary" title="Flip Card" onclick="rotateCard(this)">Back</button>
+							<button class="btn btn-primary" title="Flip Card" onclick="rotateCard(this)"><p>Back to Profile</p></button>
 						</div>	<!-- end footer -->
 					</div> <!-- end back panel -->
 				</div> <!-- end card -->
 			</div> <!-- end card-container -->
 		</div> <!-- close user column -->
+
+			<!-- end do loop -->
+
 	</div> <!-- close user collection row -->
 </div> <!-- close user collection container -->
