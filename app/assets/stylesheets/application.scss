@@ -210,7 +210,16 @@ div#navbarToggleExternalContent {
 
 // BLOG SHOW PAGE //
 .blog-post-container {
+
 	margin-top: 50px;
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	h3 {
+		font-size: 15px;
+	}
 
 	.blog-title {
 		margin-bottom: 20px;
