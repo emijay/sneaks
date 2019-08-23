@@ -1,0 +1,2 @@
+module ChatusersHelper
+end

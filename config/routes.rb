@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :shoes
   resources :owners
   resources :blogs
+
+  resources :chatusers, only: %i[index show]
+
 end
