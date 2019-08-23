@@ -1,8 +1,8 @@
 class HomesController < ApplicationController
 
     def index
-      @shoes = Shoe.all.distinct
-      @blogs = Blog.all
+      @shoes = Shoe.all
+      @blogs = Blog.all.shuffle
       @upcoming_shoes = UpcomingShoe.all
 
     end

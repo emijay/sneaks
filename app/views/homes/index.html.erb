@@ -56,39 +56,22 @@
 <div class="container-fluid releases">
 	<div class="row">
 		<div class="card-group">
+			<% @upcoming_shoes.shuffle[0,3].each do |upcoming_shoe| %>
 			<div class="card border-light mx-2">
-				<img class="card-img-top" src= "<%= @upcoming_shoes[0].image_url %>" alt="Card image cap">
+				<img class="card-img-top" src= "<%= upcoming_shoe.image_url %>" alt="Card image cap">
 				<div class="card-body">
-					<h5 class="card-title"><%= @upcoming_shoes[0].name %></h5>
+					<h5 class="card-title"><%= upcoming_shoe.name %></h5>
 				</div close card body>
 				<div class="card-footer">
-					<p><span class="bold">Drop Date:</span> <%= @upcoming_shoes[0].release_date %></p>
+					<p><span class="bold">Drop Date:</span> <%= upcoming_shoe.release_date %></p>
 				</div close card footer>
 			</div close card>
-
-			<div class="card border-light">
-				<img class="card-img-top" src="<%= @upcoming_shoes[1].image_url %>" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title"><%= @upcoming_shoes[1].name %></h5>
-				</div close card body>
-				<div class="card-footer">
-					<p><span class="bold">Drop Date:</span> <%= @upcoming_shoes[1].release_date %></p>
-				</div close card footer>
-			</div close card>
-
-			<div class="card border-light mx-2">
-				<img class="card-img-top" src="<%= @upcoming_shoes[2].image_url %>" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title"><%= @upcoming_shoes[2].name %></h5>
-				</div close card body>
-				<div class="card-footer">
-					<p><span class="bold">Drop Date:</span> <%= @upcoming_shoes[2].release_date %></p>
-				</div close card footer>
-			</div close card>
-		</div close card group>
-	</div close new releases row>
+			<% end %>
+		</div close new releases row>
 </div close release container>
 
+
+<%= link_to 'View all upcoming releases', upcoming_shoes_path %>
 <!-- feature owner collections -->
 <div class="section-header">
 	<h2>Featured User Collections</h2>
@@ -96,16 +79,18 @@
 
 <div class="container-fluid user-collections">
 	<div class="row">
+		<% @shoes.select(:user_id).distinct[0,3].each do |shoe| %>
 		<div class="col-md-4">
 			<div class="card-container manual-flip">
 				<div class="card">
 					<div class="front d-flex justify-content-center">
 						<div class="profile-pic">
-							<img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/US/en/999/UP4449-CUSA10926_00-AV00000000000003/1534386558000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" class="rounded-circle">
+							<img src="<%= shoe.user.image_url %>" class="rounded-circle">
 						</div> <!-- end profile pic -->
 
 						<div class="username">
-							<h2>@SampleUser</h2>
+							<h2>@<%= link_to shoe.user.name, owner_path(shoe.user.id) %></h2><br>
+							<h2>Total shoes: <%= link_to @shoes.where(user_id: shoe.user.id).count, owner_path(shoe.user.id) %></h2>
 						</div>
 
 						<div class="footer">
@@ -114,7 +99,10 @@
 					</div> <!-- end front panel -->
 
 				  <div class="back">
-						This is the back
+				  	<% @shoes.where(user_id: shoe.user.id).each do |shoe| %>
+					  	<p>Shoe image: <%= shoe.first_image_url %> </p>
+							<p>Shoe name: <strong> <%= link_to shoe.name, shoe_path(shoe) %> </strong> </p>
+						<% end %>
 						<div class="footer">
 							<button class="btn btn-primary" title="Flip Card" onclick="rotateCard(this)">Back</button>
 						</div>	<!-- end footer -->
@@ -122,5 +110,56 @@
 				</div> <!-- end card -->
 			</div> <!-- end card-container -->
 		</div> <!-- close user column -->
+		<% end %>
+		<%= link_to 'View all collection', owners_path%>
 	</div> <!-- close user collection row -->
 </div> <!-- close user collection container -->
+
+
+
+<%= link_to 'Add new upcoming shoe', new_upcoming_shoe_path %><br>
+
+<h2> Blogs </h2>
+<% @blogs.each do |blog| %>
+	<p> Image: <%=blog.image_url%></p>
+	<p> Title: <%=blog.title%> </p>
+	<p>	Content: <%=blog.content%></p>
+<br>
+<% end %>
+
+<br>
+<h2> Upcoming Releases </h2>
+<% @upcoming_shoes.shuffle[0,3].each do |upcoming_shoe| %>
+
+	<p> Shoe image url: <%= upcoming_shoe.image_url %></p>
+	<p> Shoe name: <%= upcoming_shoe.name %> </p>
+	<p> Shoe brand: <%= upcoming_shoe.brand.name %> </p>
+	<p> Shoe release date: <%= upcoming_shoe.release_date %> </p>
+	<p> Shoe retail price: <%= upcoming_shoe.retail_price %></p>
+	<br>
+<% end %>
+<%= link_to 'View all upcoming releases', upcoming_shoes_path %>
+<br>
+
+<h2> Featured Owners collection </h2>
+<% @shoes[0,3].each do |shoe| %>
+	<p>Onwer picture: <%= shoe.user.image_url %> </p>
+	<p>Owner: <%= link_to shoe.user.name, owner_path(shoe.user.id) %> </p>
+	<% @shoes[0,3].each do |shoe| %>
+		<p>Shoe image: <%= shoe.first_image_url %> </p>
+		<p>Shoe name: <%= link_to shoe.name, shoe_path(shoe) %> </p>
+	<% end %>
+	<br>
+<% end %>
+<%= link_to 'View all collection', owners_path%>
+<br>
+
+<h2> Featured Sneakers </h2>
+
+<% @shoes.shuffle[0,3].each do |shoe| %>
+	<p>Shoe image: <%= shoe.first_image_url %> </p>
+	<p>Shoe name: <%= shoe.name %> </p>
+	<p>Shoe description: <%= shoe.description %> </p>
+	<%= link_to 'Show this shoe', shoe_path(shoe) %>
+	<br>
+<% end %>
