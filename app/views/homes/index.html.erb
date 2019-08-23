@@ -113,7 +113,7 @@
 
 							<% @shoes.where(user_id: shoe.user.id).each do |shoe| %>
 								<div class="collection-square" style=
-									"background-image: url(<%= shoe.first_image_url %>);">
+									"background-image: url('<%= shoe.first_image_url %>');">
 								</div>
 							<% end %>
 						</div>

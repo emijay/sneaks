@@ -51,10 +51,10 @@ body {
 
 /* hide back of pane during swap */
 .front, .back {
-	-webkit-backface-visibility: hidden;
+	/*-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-o-backface-visibility: hidden;
-	backface-visibility: hidden;
+	backface-visibility: hidden;*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -69,6 +69,7 @@ body {
 			border: none;
 			background-color: $brand-color;
 			outline: 0 !important;
+			z-index: 4;
 
 
 			p {
@@ -157,7 +158,7 @@ body {
 			width: 50%;
 			height: 200px;
 			// display: inline-block;
-			background-size: cover;
+			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
 		}
