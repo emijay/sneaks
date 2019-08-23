@@ -102,18 +102,10 @@
 							<button class="btn btn-primary" onclick="rotateCard(this)"><p>Click to preview collection</p></button>
 						</div> <!-- end footer -->
 					</div> <!-- end front panel -->
-
 					<div class="back">
 						<div class="back d-flex flex-wrap">
-<!--
-							<div class="visit-button-container">
-								<%= link_to 'View all collection', owners_path %>
-									<button class="visit-button"><%= image_tag("view.png") %><p>VIEW ALL</p></button>
-							</div> -->
-
 							<% @shoes.where(user_id: shoe.user.id).each do |shoe| %>
-								<div class="collection-square" style=
-									"background-image: url('<%= shoe.first_image_url %>');">
+								<div class="collection-square" style="background-image: url('<%= shoe.first_image_url %>');">
 								</div>
 							<% end %>
 						</div>

@@ -45,8 +45,6 @@ class ShoesController < ApplicationController
     end
 
     def create
-      p "saving"
-      p shoe_params
       @shoe = Shoe.new(shoe_params)
       @shoe.save
 

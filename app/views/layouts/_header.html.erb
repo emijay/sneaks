@@ -6,10 +6,13 @@
 					<% if user_signed_in? %>
 							<h4> You are signed in as: <%= current_user.name %></h4>
 							<p class="text-uppercase d-block"><%= link_to 'View Your Collection', owner_path(current_user.id) %></p>
-				      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
-				      <p class="text-uppercase d-block"><%= link_to 'Add new upcoming shoe', new_upcoming_shoe_path %></p>
-				      <p class="text-uppercase d-block"><%= link_to 'View other''s collection', owners_path%></p>
+							<p class="text-uppercase d-block"><%= link_to 'View other''s collection', owners_path%></p>
 				      <p class="text-uppercase d-block"><%= link_to 'View all shoes collection', shoes_path%></p>
+				      <p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
+				      <% if current_user.admin? %>
+				      	<p class="text-uppercase d-block"><%= link_to 'Add new upcoming shoe', new_upcoming_shoe_path %></p>
+				      	<p class="text-uppercase d-block"><%= link_to 'Add new blog', new_blog_path %></p>
+				      <% end %>
 					<% end %>
 
 			    <p class="text-uppercase d-block">
