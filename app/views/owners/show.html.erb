@@ -9,9 +9,12 @@
 <!-- filter column -->
 		<div class="col-12 col-md-3 filter">
 
-			<div class="add-shoe">
-				<h1><%= link_to '+ Add Shoe', new_shoe_path %></h1>
-			</div>
+			<% if user_signed_in? && current_user.id == @shoes[0].user_id %>
+				<div class="add-shoe">
+						<h1><%= link_to '+ Add Shoe', new_shoe_path %></h1>
+				</div>
+			<% end %>
+
 
 			<div class="filter-header">
 				<h1>SORT</h1>
