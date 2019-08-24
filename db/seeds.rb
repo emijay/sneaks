@@ -6,11 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 User.create(name: 'asshikin', email: 'asshikin@ga.com', password: 'skin22', image_url: 'https://trendingfox.com/wp-content/uploads/2018/12/PhotoGrid_1504641675433-700x700.jpg', admin: true)
 User.create(name: 'elise', email: 'elise@ga.com', password: 'skin22', image_url: 'https://cdn131.picsart.com/278370807021201.jpg?r1024x1024', admin: true)
 User.create(name: 'hilmi', email: 'hilmi@ga.com', password: 'skin22', image_url: 'https://provectapet.com/wp-content/uploads/2017/02/provecta-for-pets-gray-cat_opt.jpg', admin: true)
-
 
 Brand.create(name: "adidas")
 Brand.create(name: "Air Jordan")
