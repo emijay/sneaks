@@ -10,84 +10,257 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require will_paginate_infinite
  *= require_tree .
  *= require_self
  */
- @font-face {
-    font-family: 'BebasNeueBook', sans-serif;
-    src: font-url('BebasNeueBook.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @import "bootstrap";
 
+@font-face {
+	font-family: 'BebasNeueBook', sans-serif;
+	src: font-url('BebasNeueBook.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 $brand-color: #fff952;
+$bebas: 'BebasNeueBook', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+
+html {
+	overflow-y: scroll;
+}
 
 body {
-  font-family: 'Montserrat', sans-serif !important;
+	font-family: 'Montserrat', sans-serif !important;
 
-  h1 {
-  	text-align: center;
-  	font-weight: 400;
-  }
+	h1 {
+		font-weight: 400;
+		text-align: center;
+	}
 
-  h2 {
-  	display: inline-block;
-  	margin: 0 auto;
-  	text-align: center;
-  	font-weight: 300;
-  	font-size: 30px;
-  	padding-bottom: 5px;
-  	border-bottom: 1px solid black;
-  }
+	h2 {
+		font-weight: 300;
+		font-size: 20px;
+		text-align: center;
+		margin: 0 auto;
+		display: inline-block;
+		padding-bottom: 5px;
+		border-bottom: 2px solid $brand-color;
+	}
 
-  p {
-  	font-weight: 300;
-  	margin-bottom: 0;
-  }
+	h3 {
+		font-size: 30px;
+	}
 
-  a {
-  	color: black;
-  }
+	h4 {
+		display: inline-block;
+		padding-bottom: 5px;
+		border-bottom: 2px solid $brand-color;
+	}
 
-  a:hover {
-  	color: $brand-color;
-  }
+	h5 {
+		text-align: center;
+		font-size: 40px;
+		margin: 20px auto;
+	}
+
+	p {
+		font-weight: 300;
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+	a {
+		color: black;
+	}
+
+	a:hover {
+		color: $brand-color;
+		text-decoration: none;
+	}
+
+	button:active, button:focus, input[type="submit"]:active, input[type="submit"]:focus, button.submit-style:active, button.submit-style:focus {
+		outline: none !important;
+	}
+
+	.bold {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	.shadow {
+		border: solid 2px;
+		box-shadow: 15px 15px 0 0 #F9C397;
+	}
+
 }
 
 div#navbarToggleExternalContent {
-  text-align: center;
+	text-align: center;
 }
 
 .navbar-light .navbar-toggler {
-  margin: 0 auto;
-  border-color: rgba(0,0,0,0)!important;
+	margin: 0 auto;
+	border-color: rgba(0, 0, 0, 0) !important;
 }
 
 .bg-light {
-  background-color: #ffffff!important;
+	background-color: #ffffff !important;
 }
 
-.navbar-toggler-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke= 'rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")!important;
- }
+// .navbar-toggler-icon {
+// 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox=!string!xmlns=!string!%3E%3Cpath stroke=!string!stroke-width=!string!stroke-linecap=!string!stroke-miterlimit=!string!d=!string!/%3E%3C/svg%3E") !important;
+// }
 
 .navbar-toggler:focus, .navbar-toggler:active {
-	outline: none!important;
- }
-
-.logo-container {
-	height: 100px;
-  width: 400px;
-  margin: 20px auto;
-  background-image: url(logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+	outline: none !important;
 }
 
-// individual collection page
+.logo-container {
+	height: 85px;
+	margin: 10px auto;
+	background-image: url(logo.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+// INDEX PAGE //
+.section-header {
+	text-align: center;
+
+	h2 {
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+}
+
+.blog {
+	margin-top: 50px;
+}
+
+.feature-article-col, .side-article-col {
+
+	.feature-article-wrapper {
+		position: relative;
+		background-size: cover;
+		width: 100%;
+		height: 600px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.side-article-wrapper {
+		position: relative;
+		background-size: cover;
+		width: 100%;
+		height: 300px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.article-inner {
+		background: #fff;
+		position: absolute;
+		bottom: 0;
+		padding: 15px 30px;
+		left: 10%;
+		width: 80%;
+
+		h1 {
+			text-align: left;
+		}
+
+		h3 {
+			font-size: 20px;
+		}
+	}
+}
+
+.releases {
+	img.card-img-top {
+    width: 50%;
+    margin: 0 auto;
+	}
+
+	.card-body {
+		text-align: center;
+	}
+
+	.card-footer {
+		background-color: $brand-color;
+		text-align: center;
+		border: none;
+
+		p {
+			text-transform: uppercase;
+			font-size: 13px;
+			letter-spacing: 2px;
+		}
+	}
+
+	p.card-text {
+		font-size: 15px;
+	}
+
+	h5.card-title {
+    font-size: 20px;
+	}
+}
+
+// BLOG INDEX //
+
+.blog-index {
+
+	.row.no-gutters {
+    padding: 10px;
+	}
+
+	.card-body {
+		padding: 0;
+	}
+
+	h5.card-title {
+		font-size: 20px;
+    text-align: left;
+    margin: 5px 5px 5px 10px;
+
+	}
+	p.card-text {
+		font-size: 10px;
+		margin: 5px 5px 5px 10px;
+	}
+}
+
+// BLOG SHOW PAGE //
+.blog-post-container {
+
+	margin-top: 50px;
+
+	p {
+		margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 2;
+	}
+
+	h3 {
+		font-size: 15px;
+	}
+
+	.blog-title {
+		margin-bottom: 20px;
+	};
+
+	img {
+		max-height: 500px;
+		margin-right: 30px;
+    margin-bottom: 30px;
+	}
+}
+
+
+// COLLECTION PAGE //
 .collection-owner {
 	display: flex;
 	justify-content: center;
@@ -97,7 +270,41 @@ div#navbarToggleExternalContent {
 // filters column
 .filter {
 	margin: 20px auto;
+	padding: 45px;
 	text-align: center;
+
+	button {
+		font-family: $montserrat;
+		font-size: 15px;
+		padding: 2px 5px;
+		border: none;
+		background: black;
+		color: $brand-color;
+		border-radius: .25rem;
+	}
+
+	.add-shoe {
+		margin-bottom: 50px;
+
+		a {
+			text-transform: uppercase;
+			padding: 15px;
+			font-family: $montserrat;
+			font-size: 15px;
+			border: none;
+			background: black;
+			color: $brand-color;
+			border-radius: .25rem;
+		}
+	}
+
+	.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn, a:hover {
+		color: black;
+		background-color: $brand-color;
+		border-color: $brand-color;
+		box-shadow: 0 0 0 0.2rem $brand-color;
+	}
+
 }
 
 .filter-header {
@@ -106,29 +313,54 @@ div#navbarToggleExternalContent {
 	background-position: bottom;
 
 	h1 {
-		font-family: 'BebasNeueBook', sans-serif;
+		font-family: $bebas;
+		font-size: 25px;
+		margin: 20px 0;
 	}
+
 }
 
 #sorting-form {
+	font-size: 13px;
+
 	select:active, select:focus, button {
-		outline: none!important;
+		outline: none !important;
 	}
+
+}
+
+.filter-checkbox {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	margin: 4px auto;
+
+	p {
+		display: inline-block;
+		font-weight: 300;
+		font-size: 15px;
+		margin-left: 10px;
+	}
+
+	input[type='0 0 30 30'] {
+		margin-right: 5px;
+	}
+
 }
 
 //shoe cards
 .collection {
-    margin: 20px auto;
-    display: flex;
-    flex-wrap: wrap;
+	margin: 20px auto;
+	display: inline-block;
 }
 
 .shoe-container {
 	display: inline-block;
-	margin: 10px 50px;
+	margin: 0px 40px;
 	position: relative;
-	width: 400px;
-	height: 400px;
+	width: 260px;
+	// width: 100%;
+	height: 280px;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -139,15 +371,241 @@ div#navbarToggleExternalContent {
 	bottom: 10px;
 	text-align: center;
 	width: 100%;
+}
 
-	.bold {
-		font-weight: 500;
-		text-transform: uppercase;
+// SHOE INDEX PAGE //
+.list-shoes {
+
+	.row.no-gutters {
+    padding: 10px;
+	}
+
+	.card-body {
+		padding: 0;
+	}
+
+	h5.card-title {
+		font-size: 20px;
+    text-align: left;
+    margin: 5px 5px 5px 10px;
+
+	}
+	p.card-text {
+		font-size: 13px;
+		margin: 5px 5px 5px 10px;
 	}
 }
 
-@media (max-width: 480px) {
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card.mb-3 {
+    margin: 10px;
+}
+
+.pagination {
+	justify-content: center;
+
+	a, em.current, span.previous_page.disabled  {
+		margin-right: 5px;
+	}
+
+	em.current {
+		padding-bottom: 5px;
+		border-bottom: 2px solid black;
+	}
+}
+
+// SHOW SHOE PAGE //
+.shoe-main-content {
+	h3 {
+		margin-bottom: 20px;
+		display: inline-block;
+		padding-bottom: 2px;
+		border-bottom: 2px solid $brand-color;
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		list-style-type: none;
+		margin: 10px auto;
+	}
+
+	button {
+		font-family: $bebas;
+		font-size: 20px;
+		border: none;
+		background: linear-gradient(to bottom, $brand-color 0%, $brand-color 100%) no-repeat;
+		background-size: (80% 60%);
+		background-position: bottom;
+	}
+
+	input[type="submit"], button.submit-style {
+		font-family: $montserrat;
+		font-size: 15px;
+		font-weight: 300;
+		margin: 30px 0;
+		padding: 8px;
+		border: none;
+		background: black;
+		color: $brand-color;
+		display: inline;
+		border-radius: .25rem;
+	}
+
+}
+
+.shoe-picture {
+	margin: 0 auto;
+	width: 100%;
+	height: 500px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.shoe-market-price {
+	display: flex;
+	justify-content: center;
+
+	.card {
+		width: 20%;
+		display: inline-block;
+		margin: 10px;
+
+		.card-body {
+			text-align: center;
+		}
+
+		img {
+			height: 50px;
+		}
+
+	}
+
+}
+
+.carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+// EDIT SHOE PAGE //
+#edit-form {
+	margin-top: 10px;
+
+	p {
+		margin: 20px 0;
+	}
+
+	label {
+		font-weight: 500;
+		margin: 0 auto;
+	}
+
+	input {
+		font-weight: 300;
+		border: none;
+		padding-bottom: 2px;
+		border-bottom: 1px solid $brand-color;
+	}
+
+	input[type='rgb(0, 0, 0)'] {
+		margin: 0;
+	}
+
+}
+
+// media queries //
+@media (max-width:480px) {
+
+	.blog {
+		margin-top: 20px;
+	}
+
+	.feature-article-col, .side-article-col {
+
+	.feature-article-wrapper {
+		position: relative;
+		background-size: cover;
+		width: 100%;
+		height: 150px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.side-article-wrapper {
+		position: relative;
+		background-size: cover;
+		width: 100%;
+		height: 150px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.article-inner {
+		background: #fff;
+    position: absolute;
+    bottom: 0;
+    padding: 5px 10px;
+    left: 10%;
+    width: 80%;
+
+		h1 {
+			font-size: 12px;
+			text-align: left;
+		}
+
+		h3 {
+			font-size: 12px;
+		}
+
+		p {
+	    font-size: 9px;
+		}
+	}
+}
+
 	.shoe-container {
 		margin: 0;
 	}
+
+	.shoe-picture {
+		height: 250px;
+	}
+
+	.shoe-main-content {
+		text-align: center;
+
+		h3 {
+			font-size: 20px;
+		}
+
+	}
+
+	.col-12.col-md-9.collection {
+		justify-content: center;
+	}
+
+	.shoe-market-price {
+		flex-wrap: wrap;
+
+		.card {
+			width: 100%;
+			display: block;
+		}
+
+	}
+
 }

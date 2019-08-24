@@ -1,0 +1,10 @@
+<h1> Show individual upcoming shoe </h1>
+
+<p> Shoe image url: <%= @upcoming_shoe.image_url %></p>
+<p> Shoe name: <%= @upcoming_shoe.name %> </p>
+<p> Shoe brand: <%= @upcoming_shoe.brand.name %> </p>
+<p> Shoe release date: <%= @upcoming_shoe.release_date %> </p>
+<p> Shoe retail price: <%= @upcoming_shoe.retail_price %></p>
+<p><%= link_to 'Edit', edit_upcoming_shoe_path(@upcoming_shoe) %> || <%= link_to 'Delete', upcoming_shoe_path(@upcoming_shoe), method: :delete, data: {confirm: "Are you sure you want to delete?"} %> </p>
+
+<%= link_to 'Back', upcoming_shoes_path %>

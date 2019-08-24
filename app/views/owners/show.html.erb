@@ -1,58 +1,56 @@
-
-<%= form_with scope: :filters, url: owner_path(@id), local: true do |form| %>
-
-	<%= form.collection_check_boxes(:brand_ids, @brands, :id, :name) do |b| %>
-			<div>
-				<%= b.check_box %><%= b.label { b.text } %>
-			</div>
-   <% end %>
-
-	<p>
-    <%= form.submit :'Filter' %>
-  </p>
-
-<% end %>
-
 <%= render "layouts/header" %>
 
-<!-- main content -->
 <div class="collection-owner">
 	<h2><%= @owner[0].name %>'s Collection</h2>
-</div>
-<div class="main-content container-fluid">
+</div closing collection-owner name>
+
+<div class="owner-main-content container-fluid">
 	<div class="row">
-<!-- filtering column -->
-		<div class="col-6 col-md-3 filter">
+<!-- filter column -->
+		<div class="col-12 col-md-3 filter">
+
+			<div class="add-shoe">
+				<h1><%= link_to '+ Add Shoe', new_shoe_path %></h1>
+			</div>
+
+			<div class="filter-header">
+				<h1>SORT</h1>
+			</div>
+
+			<div class="sort-form-container">
+				<%= render "layouts/sortform" %>
+			</div close sort form container>
+
+
 			<div class="filter-header">
 				<h1>FILTER</h1>
 			</div>
-<!-- sort form -->
-			<div class="sort-form-container">
-				<form method="GET" action="/owners/<%= @id %>" id="sorting-form">
-					<label>Sort By: </label>
-						<select name="sort">
-						<option value="r_date">Newest</option>
-						<option value="o_date">Oldest</option>
-							<option value="h_price">Highest Price</option>
-						<option value="l_price">Lowest Price</option>
-						</select>
-					<button type="submit">Sort</button>
-				</form>
+			<p>
+  			<button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   		 		Open Filters
+  			</button>
+			</p>
+			<div class="collapse" id="collapseExample">
+			  <div class="card card-body">
+					<div class="filter-form-container">
+						<%= render "layouts/filterform" %>
+					</div close filter-form-container>
+			  </div>
 			</div>
-		</div>
+		</div close filter column>
 <!-- shoe column -->
 		<div class="col-12 col-md-9 collection">
 			<% @shoes.each do |shoe| %>
-			<%= link_to shoe_path(shoe) do %>
-			<div class="shoe-container" style=
-				"background-image: url(<%= shoe.image_url %>)">
-				<div class="shoe-caption">
-					<p><span class="bold"><%= shoe.name %></span></p>
-					<p><%= shoe.brand.name %></p>
-				</div>
-			</div>
+				<%= link_to shoe_path(shoe) do %>
+				<div class="shoe-container" style=
+					"background-image: url(<%= shoe.first_image_url %>)">
+					<div class="shoe-caption">
+						<p><span class="bold"><%= shoe.name %></span></p>
+						<p><%= shoe.brand.name %></p>
+					</div close shoe-caption>
+				</div close shoe-container>
+				<% end %>
 			<% end %>
-			<% end %>
-		</div>
-	</div>
-
+		</div close shoe column>
+	</div close row>
+	<!-- not sure where container ending div is..? -->

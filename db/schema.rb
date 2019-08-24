@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_044946) do
+ActiveRecord::Schema.define(version: 2019_08_23_172312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: :cascade do |t|
+    t.text "title"
+    t.text "content"
+    t.text "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "brands", force: :cascade do |t|
     t.text "name"
@@ -27,8 +35,11 @@ ActiveRecord::Schema.define(version: 2019_08_20_044946) do
     t.text "release_year"
     t.text "style"
     t.text "description"
-    t.text "cost_price"
-    t.text "image_url"
+    t.integer "cost_price"
+    t.text "first_image_url"
+    t.text "second_image_url"
+    t.text "third_image_url"
+    t.text "fourth_image_url"
     t.bigint "brand_id"
     t.bigint "size_id"
     t.datetime "created_at", null: false
@@ -45,6 +56,17 @@ ActiveRecord::Schema.define(version: 2019_08_20_044946) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "upcoming_shoes", force: :cascade do |t|
+    t.text "name"
+    t.text "image_url"
+    t.text "release_date"
+    t.text "retail_price"
+    t.bigint "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_upcoming_shoes_on_brand_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -55,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_044946) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "image_url"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -13,3 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+//= require popper
+//= require bootstrap
+
+//= require will_paginate_infinite

@@ -1,55 +1,69 @@
-<h1> Edit shoe </h1>
+<%= render "layouts/header" %>
+<div class="shoe-main-content container-fluid">
+	<div class="row d-flex align-items-start">
+		<div class="col-12 col-md-6 offset-md-1">
+			<div class="shoe-picture" style=
+				"background-image: url(<%= @shoe.first_image_url %>)">
+			</div close shoe picture div>
+		</div close shoe picture+ name div>
+		<div class="col-12 col-md-4 ofset-md-0.5">
+			<h2> Edit shoe </h2>
 
-<%= form_with scope: :shoes, model: @shoe, local: true do |form| %>
+			<div id="edit-form">
+				<%= form_with scope: :shoes, model: @shoe, local: true do |form| %>
+				<p> Brand: <%= form.collection_select :brand_id, @brands, :id, :name %> </p>
+				<p> Size: <%= form.collection_select :size_id, @sizes, :id, :size %> </p>
+				<p>
+					<%= form.label :name %><br>
+					<%= form.text_field :name %>
+				</p>
+				<p>
+					<%= form.label :color %><br>
+					<%= form.text_field :color %>
+				</p>
+				<p>
+					<%= form.label :release_year %><br>
+					<%= form.text_field :release_year %>
+				</p>
+				<p>
+					<%= form.label :style %><br>
+					<%= form.text_field :style %>
+				</p>
+				<p>
+					<%= form.label :cost_price %><br>
+					<%= form.text_field :cost_price %>
+				</p>
+				<p>
+					<%= form.label :first_image_url %><br>
+					<%= form.text_field :first_image_url %>
+				</p>
+				<p>
+					<%= form.label :second_image_url %><br>
+					<%= form.text_field :second_image_url %>
+				</p>
+				<p>
+					<%= form.label :third_image_url %><br>
+					<%= form.text_field :third_image_url %>
+				</p>
+				<p>
+					<%= form.label :fourth_image_url %><br>
+					<%= form.text_field :fourth_image_url %>
+				</p>
+				<p>
+					<%= form.label :description %><br>
+					<%= form.text_area :description %>
+				</p>
+					<%= form.submit %>
+				<% end %>
+			</div close edit form div>
 
-	<p> Brand: <%= form.collection_select :brand_id, @brands, :id, :name %> </p>
-  <p> Size: <%= form.collection_select :size_id, @sizes, :id, :size %> </p>
-
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.label :color %><br>
-    <%= form.text_field :color %>
-  </p>
-
-  <p>
-    <%= form.label :release_year %><br>
-    <%= form.text_field :release_year %>
-  </p>
-
-  <p>
-    <%= form.label :style %><br>
-    <%= form.text_field :style %>
-  </p>
-
-  <p>
-    <%= form.label :cost_price %><br>
-    <%= form.text_field :cost_price %>
-  </p>
-
-	<p>
-    <%= form.label :image_url %><br>
-    <%= form.text_field :image_url %>
-  </p>
-
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-
-
-	<p>
-    <%= form.hidden_field :user_id, :value => 1 %>
-  </p>
-
-
-  <p>
-    <%= form.submit %>
-  </p>
-
-<% end %>
-
-<%= link_to 'Back', shoes_path %>
+			<% if user_signed_in? && current_user.id == @shoe.user.id %>
+				<%= link_to shoe_path(@shoe), method: :delete, data: {confirm: 'Are you sure you want to delete?'} do %>
+				<button class="submit-style">Delete</button>
+				<% end %>
+			<% end %>
+			<br/>
+			<%= link_to 'Back to Collection', shoe_path(@shoe) %>
+		</div close shoe description div>
+	</div close row>
+</div close main container>

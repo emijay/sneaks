@@ -1,12 +1,93 @@
-<h1> Individual shoe page (show page) </h1>
+<%= render "layouts/header" %>
 
-<p> Owner: <%= @shoe.user.name %></p>
-<p> Name: <%= @shoe.name %> </p>
-<p> Brand: <%= @shoe.brand.name %> </p>
-<p> Size: <%= @shoe.size.size %> </p>
-<p> Colour: <%= @shoe.color %> </p>
-<p> Release year: <%= @shoe.release_year %> </p>
-<p> Price: $<%= @shoe.cost_price %> </p>
-<p> Description: <%= @shoe.description %> </p>
+<div class="shoe-main-content container-fluid">
+	<div class="row d-flex align-items-center">
 
-<p> <%= link_to 'Back', shoes_path %> </p>
+		<div class="col-12 col-md-6 offset-md-1">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					  <ol class="carousel-indicators">
+					    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					  </ol>
+					  <div class="carousel-inner">
+					     <div class="carousel-item active">
+						      <img src="<%= @images[0] %>" class="d-block w-100"/>
+						   </div>
+					    <% @images[1,4].each do |image| %>
+					    <% if !image.blank? %>
+						    <div class="carousel-item">
+						      <img src="<%= image %>" class="d-block w-100"/>
+						    </div>
+						    <% end %>
+					    <% end %>
+					  </div>
+					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
+		</div close shoe picture+ name div>
+
+		<div class="col-12 col-md-4 ofset-md-0.5">
+			<h3><%= @shoe.name %></h3>
+			<ul>
+				<li><p><span class="bold">Brand:</span> <%= @shoe.brand.name %></p></li>
+				<li><p><span class="bold">Style:</span> <%= @shoe.style %> </p></li>
+				<li><p><span class="bold">Size:</span> <%= @shoe.size.size %> </p></li>
+				<li><p><span class="bold">Colour:</span> <%= @shoe.color %> </p></li>
+				<li><p><span class="bold">Release Year:</span> <%= @shoe.release_year %></p></li>
+				<li><p><span class="bold">Price:</span> $<%= @shoe.cost_price %></p></li>
+			</ul>
+
+			<% if user_signed_in? && current_user.id == @shoe.user.id %>
+
+        <%= link_to edit_shoe_path(@shoe) do %>
+        	<button>Edit</button>
+      	<% end %>
+
+      	<%= link_to shoe_path(@shoe), method: :delete, data: {confirm: 'Are you sure you want to delete?'} do %>
+        	<button>Delete</button>
+      	<% end %>
+      <% end %>
+
+		<%= button_to "Back to Collection", owner_path(@shoe.user_id), method: :get %>
+		</div close shoe description div>
+	</div close shoe pic and description row>
+
+	<div class="row">
+		<div class="col-12 d-flex justify-content-center">
+			<h4>CURRENT MARKET VALUE</h4>
+		</div>
+	</div closing price header row>
+
+	<div class="row">
+		<div class="col-12 shoe-market-price">
+			<div class="card">
+  			<div class="card-body">
+  				<%= image_tag("stockx.png") %>
+    			<h5><%= @stockx %></h5>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+  				<%= image_tag("goat.png") %>
+    			<h5><%= @goat %></h5>
+  			</div>
+			</div>
+
+			<div class="card">
+  			<div class="card-body">
+  				<%= image_tag("flightclub.png") %>
+    			<h5><%= @flightclub %></h5>
+  			</div>
+			</div>
+		</div closing market price col>
+	</div close price row>
+</div close main container>

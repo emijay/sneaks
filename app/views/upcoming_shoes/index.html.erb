@@ -1,0 +1,14 @@
+<h1> All upcoming shoes </h1>
+
+<% @upcoming_shoes.each do |upcoming_shoe| %>
+
+	<p> Shoe image url: <%= upcoming_shoe.image_url %></p>
+	<p> Shoe name: <%= upcoming_shoe.name %> </p>
+	<p> Shoe brand: <%= upcoming_shoe.brand.name %> </p>
+	<p> Shoe release date: <%= upcoming_shoe.release_date %> </p>
+	<p> Shoe retail price: <%= upcoming_shoe.retail_price %></p>
+	<%= link_to 'Show', upcoming_shoe_path(upcoming_shoe) %>
+	<br>
+<% end %>
+
+<%= link_to 'Back', homes_path %>

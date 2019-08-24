@@ -1,0 +1,24 @@
+<%= render "layouts/header" %>
+
+<div class="container-fluid blog-post-container">
+	<div class="row">
+
+		<div class="col-12 blog-title d-flex justify-content-center">
+			<h2> <%= @blog.title %></h2>
+		</div>
+
+		<div class="col-12 blog-title d-flex justify-content-center">
+			<h3> <%= @blog.created_at.strftime("%B %e, %Y	") %></h3>
+		</div>
+
+		<div class="col clearfix">
+			<img class="float-left"  src= "<%= @blog.image_url %>">
+			<div>
+				<%= simple_format(@blog.content) %>
+			</div>
+		</div>
+
+
+<!-- <%= link_to 'Back', blogs_path %> -->
+	</div> <!-- close row -->
+</div> <!-- close container -->
