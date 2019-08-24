@@ -71,23 +71,32 @@
 			<div class="card">
   			<div class="card-body">
   				<%= image_tag("stockx.png") %>
-    			<h5><%= image_tag("ajax-loader.gif") %></h5>
+    			<h5 id="stockx"><%= image_tag("ajax-loader.gif") %></h5>
   			</div>
 			</div>
 
 			<div class="card">
   			<div class="card-body">
   				<%= image_tag("goat.png") %>
-    			<h5><%= image_tag("ajax-loader.gif") %></h5>
+    			<h5 id="goat"><%= image_tag("ajax-loader.gif") %></h5>
   			</div>
 			</div>
 
 			<div class="card">
   			<div class="card-body">
   				<%= image_tag("flightclub.png") %>
-    			<h5><%= image_tag("ajax-loader.gif") %></h5>
+    			<h5 id="flightclub"><%= image_tag("ajax-loader.gif") %></h5>
   			</div>
 			</div>
 		</div closing market price col>
 	</div close price row>
 </div close main container>
+
+<div id="hiddenstyle" style="display:none">
+	<%= @hiddenstyle %>
+</div>
+<div id="hiddensize" style="display:none">
+	<%= @hiddensize %>
+</div>
+
+<%= javascript_include_tag( 'getprice' ) %>

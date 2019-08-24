@@ -12,6 +12,9 @@ class ShoesController < ApplicationController
     def show
       @shoe = Shoe.find(params[:id])
       @images = [@shoe.first_image_url, @shoe.second_image_url, @shoe.third_image_url, @shoe.fourth_image_url]
+      @hiddenstyle = @shoe.style
+      @hiddensize = @shoe.size.size
+
     end
 
     def new
