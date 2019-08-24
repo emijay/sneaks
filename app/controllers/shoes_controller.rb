@@ -42,14 +42,27 @@ class ShoesController < ApplicationController
       @brands = Brand.all
       @sizes = Size.all
       @id = current_user.id
+      @shoe = Shoe.new
+      @image = @shoe.images.build
     end
 
     def create
       @shoe = Shoe.new(shoe_params)
-      @shoe.save
 
-      redirect_to owner_path(current_user.id)
-
+      respond_to do |format|
+        if @shoe.save
+          if params[:images]
+            params[:images].each do |image|
+              @shoe.images.create(image: image)
+            end
+          end
+          format.html { redirect_to owner_path(current_user.id), notice: 'Shoe was successfully entered.' }
+          format.json { render action: 'show', status: :created, location: @shoe }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @shoe.errors, status: :unprocessable_entity }
+        end
+      end
     end
 
     def edit
@@ -77,6 +90,6 @@ class ShoesController < ApplicationController
 
     private
       def shoe_params
-        params.require(:shoes).permit(:brand_id, :size_id, :name, :color, :release_year, :style, :cost_price, :first_image_url, :second_image_url, :third_image_url, :fourth_image_url, :description, :user_id)
+        params.require(:shoes).permit(:brand_id, :size_id, :name, :color, :release_year, :style, :cost_price, :first_image_url, :second_image_url, :third_image_url, :fourth_image_url, :description, :user_id, images_attributes: [:image, :shoe_id])
       end
 end

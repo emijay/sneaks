@@ -1,6 +1,6 @@
 <h1> Add new shoe</h1>
 
-<%= form_with scope: :shoes, url: shoes_path, local: true do |form| %>
+<%= form_with scope: :shoes, url: shoes_path, :html => { multipart: true }, local: true do |form| %>
 
 	<p> Brand: <%= form.collection_select :brand_id, @brands, :id, :name %> </p>
   <p> Size: <%= form.collection_select :size_id, @sizes, :id, :size %> </p>
@@ -30,25 +30,12 @@
     <%= form.text_field :cost_price %>
   </p>
 
-	<p>
-    <%= form.label :first_image_url %><br>
-    <%= form.text_field :first_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :second_image_url %><br>
-    <%= form.text_field :second_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :third_image_url %><br>
-    <%= form.text_field :third_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :fourth_image_url %><br>
-    <%= form.text_field :fourth_image_url %>
-  </p>
+	<%= form.fields_for :image do |ff| %>
+    <div class="field">
+      <%= ff.label :image %><br>
+      <%= ff.file_field :image, multiple: true, name: "images[]" %>
+    </div>
+  <% end %>
 
   <p>
     <%= form.label :description %><br>

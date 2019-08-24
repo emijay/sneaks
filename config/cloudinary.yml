@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: kinskin
+  api_key: '247796894467252'
+  api_secret: 7lp9R--e0hOxUv0nROCeD0OyBVc
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: kinskin
+  api_key: '247796894467252'
+  api_secret: 7lp9R--e0hOxUv0nROCeD0OyBVc
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: kinskin
+  api_key: '247796894467252'
+  api_secret: 7lp9R--e0hOxUv0nROCeD0OyBVc
+  enhance_image_tag: true
+  static_file_support: false
