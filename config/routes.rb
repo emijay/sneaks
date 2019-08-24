@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :blogs
   resources :homes
   resources :upcoming_shoes
+
+
 end
