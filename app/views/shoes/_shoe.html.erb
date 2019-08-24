@@ -1,7 +1,13 @@
-<div>
-  <p>Shoe Name: <%= shoe.name %></p>
-	<p>Shoe style: <%= shoe.style %></p>
-	<p>Shoe image: <%= shoe.first_image_url %></p>
-	<p>Shoe release year: <%= shoe.release_year %> </p>
-	<p><%= link_to 'show this shoe', shoe_path(shoe) %></p>
-</div>
+<div class="card mb-3" style="max-width: 30%;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="<%= shoe.first_image_url %>" class="card-img img-responsive" alt="shoe-image">
+				</div close image col>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title"><a href="<%= shoe_path(shoe.id) %>" target="_self"><%= shoe.name %></a></h5>
+						<p class="card-text">Owner: <a href="<%= owner_path(shoe.id) %>" target="_self"><%= shoe.user.name %></a> || Size: <%= shoe.size.size %></p>
+					</div close card body>
+				</div close text col>
+			</div close row>
+		</div close card>
