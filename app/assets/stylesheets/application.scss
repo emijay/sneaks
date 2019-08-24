@@ -390,19 +390,20 @@ div#navbarToggleExternalContent {
     margin: 5px 5px 5px 10px;
 
 	}
+
 	p.card-text {
 		font-size: 13px;
 		margin: 5px 5px 5px 10px;
 	}
-}
 
-ul {
+	ul {
     display: flex;
     flex-wrap: wrap;
-}
+	}
 
-.card.mb-3 {
+	.card.mb-3 {
     margin: 10px;
+	}
 }
 
 .pagination {
