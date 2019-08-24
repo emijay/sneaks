@@ -8,11 +8,11 @@
 				"background-image: url(<%= @blogs[0].image_url %>)">
 					<div class="article-inner">
 						<div class="feature-article-title">
-              <h1><a href=" <%= blog_path(@blogs[0].id) %>" target="_self"><%= @blogs[0].title %></a></h1>
+              <h1><a href=" <%= blog_path(@blogs[0].id) %>" target="_self"><%= @blogs[0].title %></h1>
           	</div close feature article title>
 
           	<div class="feature-article-date">
-              <p><a href="lol.html" target="_self"><%= @blogs[0].created_at.strftime("%B %e, %Y	") %></a></p>
+              <p><%= @blogs[0].created_at.strftime("%B %e, %Y	") %></p>
           	</div close feature article date>
 					</div close article inner>
 				</div close feature article wrapper>
@@ -27,7 +27,7 @@
           	</div close feature article title>
 
           	<div class="feature-article-date">
-              <p><a href="lol.html" target="_self"><%= @blogs[1].created_at.strftime("%B %e, %Y	") %></a></p>
+              <p><%= @blogs[1].created_at.strftime("%B %e, %Y	") %></p>
           	</div close feature article date>
 					</div close feature article inner>
 				</div close feature article wrapper>
@@ -40,7 +40,7 @@
           	</div close feature article title>
 
           	<div class="feature-article-date">
-              <p><a href="lol.html" target="_self"><%= @blogs[2].created_at.strftime("%B %e, %Y	") %></a></p>
+              <p><%= @blogs[2].created_at.strftime("%B %e, %Y	") %></p>
           	</div close feature article date>
 					</div close feature article inner>
 				</div close feature article wrapper>
@@ -85,17 +85,19 @@
 						<div class="profile-pic">
 							<img src="<%= shoe.user.image_url %>" class="rounded-circle">
 						</div> <!-- end profile pic -->
+
 						<div class="username">
 							<h2>@<%= link_to shoe.user.name, owner_path(shoe.user.id) %></h2><br>
-						</div>
+						</div> <!-- close username container -->
+
 						<div class="container user-stats">
 							<div class="row d-flex justify-content-center align-items-center">
 								<div class="col-6 stat-col">
 									<h4><span class="stat-header">Shoes in Collection</span><%= link_to @shoes.where(user_id: shoe.user.id).count, owner_path(shoe.user.id) %></h4>
-								</div><!-- close first stats col -->
+								</div> <!-- close first stats col -->
 								<div class="col-6 stat-col">
-									<h4><span class="stat-header">Value of Collection</span><%= @shoes.where(user_id: shoe.user.id).sum(:cost_price)%></h4>
-								</div><!-- close first stats col -->
+									<h4><span class="stat-header">Value of Collection</span>$<%= @shoes.where(user_id: shoe.user.id).sum(:cost_price)%></h4>
+								</div><!-- close second stats col -->
 							</div> <!-- end stats row -->
 						</div> <!-- close stats container -->
 						<div class="footer">
@@ -105,8 +107,15 @@
 					<div class="back">
 						<div class="back d-flex flex-wrap">
 							<% @shoes.where(user_id: shoe.user.id).each do |shoe| %>
+
 								<div class="collection-square" style="background-image: url('<%= shoe.first_image_url %>');">
 								</div>
+
+							  <div class="visit-button-container">
+                  <button class="visit-button"><%= image_tag("view.png") %><p><%= link_to "VIEW ALL",  owner_path(shoe.user.id) %></p>
+                  </button>
+              	</div>
+
 							<% end %>
 						</div>
 						<div class="footer">

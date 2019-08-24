@@ -61,6 +61,35 @@ body {
 	background-color: #FFF;
 	// box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 
+		button.visit-button {
+			position: absolute;
+	    top: 42%;
+	    left: 43%;
+			background-color: rgba(1,1,1,0.5);
+		  border: none;
+		  color: white;
+		  padding: 10px;
+		  text-align: center;
+		  text-decoration: none;
+		  font-size: 16px;
+		  margin: 4px 2px;
+			border-radius: 50%;
+			transform: rotateY(180deg);
+			z-index: 4;
+
+			img {
+				height: 40px;
+			}
+
+			a {
+				color: $brand-color;
+			}
+
+			a: hover {
+				color: white;
+			}
+		}
+
 		.btn-primary {
 			position: absolute;
 			left: 0;
@@ -162,26 +191,8 @@ body {
 			background-position: center;
 			background-repeat: no-repeat;
 		}
-
-		button.visit-button {
-			position: absolute;
-	    top: 42%;
-	    left: 43%;
-			background-color: rgba(1,1,1,0.8);
-		  border: none;
-		  color: white;
-		  padding: 10px;
-		  text-align: center;
-		  text-decoration: none;
-		  font-size: 16px;
-		  margin: 4px 2px;
-			border-radius: 50%;
-
-			img {
-				height: 40px;
-			}
-		}
 	}
+
 
 	/*        Style       */
 	.card {
