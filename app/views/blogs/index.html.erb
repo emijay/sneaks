@@ -18,7 +18,7 @@
 
 				<div class="col-md-8">
 					<div class="card-body">
-						<h5 class="card-title"><%= blog.title %></h5>
+						<h5 class="card-title"><a href="<%= blog_path(blog.id) %>" target="_self"><%= blog.title %></a></h5>
 						<p class="card-text"><%= blog.created_at.strftime("%B %e, %Y") %></p>
 					</div close card body>
 				</div close text col>
