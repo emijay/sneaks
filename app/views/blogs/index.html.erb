@@ -1,10 +1,30 @@
-<h1> Blog index page </h1>
+<%= render "layouts/header" %>
 
-<% @blogs.each do|blog| %>
-<p> <%= blog.image_url %> </p>
-<p> <%= blog.title %> </p>
-<p> <%= blog.content %> </p>
+<div class="section-header">
+	<h2>The Fresh Feed</h2>
+</div>
 
-<% end %>
+<div class="container-fluid blog-index">
+	<div class="card-deck">
 
-<%= link_to 'Back', root_path %>
+		<% @blogs.each do|blog| %>
+
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row no-gutters">
+
+				<div class="col-md-4">
+					<img src="<%= blog.image_url %>" class="card-img img-responsive" alt="blog-image">
+				</div close image col>
+
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title"><%= blog.title %></h5>
+						<p class="card-text"><%= blog.created_at.strftime("%B %e, %Y") %></p>
+					</div close card body>
+				</div close text col>
+
+			</div close row>
+		</div close card>
+		<% end %>
+	</div close card deck>
+</div close container>

@@ -8,10 +8,6 @@ body {
 	background-color: #E5E9ED;
 }
 
-.btn:hover, .btn:focus, .btn:active, .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-	outline: 0 !important;
-}
-
 /* entire container, keeps perspective */
 .card-container {
 	-webkit-perspective: 800px;
@@ -60,6 +56,13 @@ body {
 	left: 0;
 	background-color: #FFF;
 	// box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+
+	.btn:hover, .btn:focus, .btn:active, .btn:visited, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited {
+	outline: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	background-color: black !important;
+}
 
 		button.visit-button {
 			position: absolute;

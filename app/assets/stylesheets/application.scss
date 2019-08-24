@@ -209,6 +209,41 @@ div#navbarToggleExternalContent {
 	}
 }
 
+// BLOG INDEX //
+
+.blog-index {
+
+	.row.no-gutters {
+    padding: 10px;
+	}
+
+	.card-body {
+		padding: 0;
+	}
+
+	h5.card-title {
+		font-size: 20px;
+    text-align: left;
+    margin: 5px 5px 5px 10px;
+
+	}
+	p.card-text {
+		font-size: 10px;
+		margin: 5px 5px 5px 10px;
+	}
+}
+
+// .blog-index h5.card-title {
+//     font-size: 20px;
+//     text-align: left;
+// }
+
+// .blog-index p.card-title {
+//     font-size: 15px;
+//     text-align: left;
+// }
+
+
 // BLOG SHOW PAGE //
 .blog-post-container {
 
@@ -256,12 +291,28 @@ div#navbarToggleExternalContent {
 		border: none;
 		background: black;
 		color: $brand-color;
+		border-radius: .25rem;
 	}
 
-	.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+	.add-shoe {
+		margin-bottom: 50px;
+
+		a {
+			text-transform: uppercase;
+			padding: 15px;
+			font-family: $montserrat;
+			font-size: 15px;
+			border: none;
+			background: black;
+			color: $brand-color;
+			border-radius: .25rem;
+		}
+	}
+
+	.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn, a:hover {
 		color: black;
 		background-color: $brand-color;
-		border-color: $brand-color; /*set the color you want here*/
+		border-color: $brand-color;
 		box-shadow: 0 0 0 0.2rem $brand-color;
 	}
 
@@ -299,6 +350,7 @@ div#navbarToggleExternalContent {
 		display: inline-block;
 		font-weight: 300;
 		font-size: 15px;
+		margin-left: 10px;
 	}
 
 	input[type='0 0 30 30'] {
@@ -310,8 +362,7 @@ div#navbarToggleExternalContent {
 //shoe cards
 .collection {
 	margin: 20px auto;
-	display: flex;
-	flex-wrap: wrap;
+	display: inline-block;
 }
 
 .shoe-container {
@@ -319,6 +370,7 @@ div#navbarToggleExternalContent {
 	margin: 0px 40px;
 	position: relative;
 	width: 260px;
+	// width: 100%;
 	height: 280px;
 	background-size: contain;
 	background-position: center;
@@ -373,6 +425,7 @@ div#navbarToggleExternalContent {
 		background: black;
 		color: $brand-color;
 		display: inline;
+		border-radius: .25rem;
 	}
 
 }
@@ -407,6 +460,13 @@ div#navbarToggleExternalContent {
 
 }
 
+.carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
 // EDIT SHOE PAGE //
 #edit-form {
 	margin-top: 10px;
