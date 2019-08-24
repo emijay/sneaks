@@ -1,8 +1,49 @@
-<h1> Owner's Shoes Collection </h1>
+<%= render "layouts/header" %>
+<div class="section-header">
+<h2> Users </h2>
+</div>
+<div class="container-fluid user-collections">
+	<div class="row">
 
-<% @shoes.each do |shoe| %>
-	<p> Owner: <%= link_to shoe.user.name, owner_path(shoe.user_id) %>
-	<br>
-<% end %>
-<br>
-<%= link_to 'Back', shoes_path %>
+		<% @shoes.select(:user_id).distinct.each do |shoe| %>
+		<div class="col-md-4">
+			<div class="card-container manual-flip">
+				<div class="card">
+					<div class="front d-flex justify-content-center">
+						<div class="profile-pic">
+							<img src="<%= shoe.user.image_url %>" class="rounded-circle">
+						</div> <!-- end profile pic -->
+						<div class="username">
+							<h2>@<%= link_to shoe.user.name, owner_path(shoe.user.id) %></h2><br>
+						</div>
+						<div class="container user-stats">
+							<div class="row d-flex justify-content-center align-items-center">
+								<div class="col-6 stat-col">
+									<h4><span class="stat-header">Shoes in Collection</span><%= link_to @shoes.where(user_id: shoe.user.id).count, owner_path(shoe.user.id) %></h4>
+								</div><!-- close first stats col -->
+								<div class="col-6 stat-col">
+									<h4><span class="stat-header">Value of Collection</span><%= @shoes.where(user_id: shoe.user.id).sum(:cost_price)%></h4>
+								</div><!-- close first stats col -->
+							</div> <!-- end stats row -->
+						</div> <!-- close stats container -->
+						<div class="footer">
+							<button class="btn btn-primary" onclick="rotateCard(this)"><p>Click to preview collection</p></button>
+						</div> <!-- end footer -->
+					</div> <!-- end front panel -->
+					<div class="back">
+						<div class="back d-flex flex-wrap">
+							<% @shoes.where(user_id: shoe.user.id).each do |shoe| %>
+								<div class="collection-square" style="background-image: url('<%= shoe.first_image_url %>');">
+								</div>
+							<% end %>
+						</div>
+						<div class="footer">
+							<button class="btn btn-primary" title="Flip Card" onclick="rotateCard(this)"><p>Back to Profile</p></button>
+							</div>	<!-- end footer -->
+						</div> <!-- end back panel -->
+					</div> <!-- end card -->
+				</div> <!-- end card-container -->
+			</div> <!-- close user column -->
+		<% end %>
+		</div> <!-- close user collection row -->
+	</div> <!-- close user collection container -->
