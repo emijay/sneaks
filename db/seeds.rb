@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: 'asshikin', email: 'asshikin@ga.com', password: 'skin22', image_url: 'https://trendingfox.com/wp-content/uploads/2018/12/PhotoGrid_1504641675433-700x700.jpg', admin: true)
-User.create(name: 'elise', email: 'elise@ga.com', password: 'skin22', image_url: 'https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg', admin: true)
-User.create(name: 'hilmi', email: 'hilmi@ga.com', password: 'skin22', image_url: 'https://provectapet.com/wp-content/uploads/2017/02/provecta-for-pets-gray-cat_opt.jpg', admin: true)
+User.create(name: 'asshikin', email: 'asshikin@ga.com', password: 'password', image_url: 'https://trendingfox.com/wp-content/uploads/2018/12/PhotoGrid_1504641675433-700x700.jpg', admin: true)
+User.create(name: 'elise', email: 'elise@ga.com', password: 'password', image_url: 'https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg', admin: true)
+User.create(name: 'hilmi', email: 'hilmi@ga.com', password: 'password', image_url: 'https://provectapet.com/wp-content/uploads/2017/02/provecta-for-pets-gray-cat_opt.jpg', admin: true)
 
 
 Brand.create(name: "adidas")
