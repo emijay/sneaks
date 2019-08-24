@@ -1,7 +1,8 @@
 class OwnersController < ApplicationController
 
     def index
-      @shoes = Shoe.select(:user_id).distinct
+      # @shoes = Shoe.select(:user_id).distinct
+      @shoes = Shoe.all
     end
 
     def show
