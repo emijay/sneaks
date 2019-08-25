@@ -6,7 +6,7 @@
 				<div class="col-md-8">
 					<div class="card-body">
 						<h5 class="card-title"><a href="<%= shoe_path(shoe.id) %>" target="_self"><%= shoe.name %></a></h5>
-						<p class="card-text">Owner: <a href="<%= owner_path(shoe.id) %>" target="_self"><%= shoe.user.name %></a> || Size: <%= shoe.size.size %></p>
+						<p class="card-text">Owner: <a href="<%= owner_path(shoe.user_id) %>" target="_self"><%= shoe.user.name %></a> || Size: <%= shoe.size.size %></p>
 					</div close card body>
 				</div close text col>
 			</div close row>
