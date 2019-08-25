@@ -107,7 +107,7 @@
 					</div> <!-- end front panel -->
 					<div class="back">
 						<div class="back d-flex flex-wrap">
-							<% @shoes.where(user_id: shoe.user.id)[0,4].each do |shoe| %>
+							<% @shoes.where(user_id: shoe.user.id).shuffle[0,4].each do |shoe| %>
 
 								<div class="collection-square" style="background-image: url('<%= shoe.first_image_url %>');">
 								</div>
