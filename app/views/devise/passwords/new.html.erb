@@ -1,16 +1,16 @@
 
 <div class="row">
 
-  <div class="col-6">
-    <img src="https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" class="card-img" alt="picture of shoes">
+  <div class="d-none d-md-block col-md-6 sign-in">
+  	<%=image_tag("sign-in.jpeg")%>
   </div>
 
-  <div class="col-6">
+  <div class="col-11 col-md-6 sign-in">
 		<div class="container">
 			<h2 class="my-3 font-weight-bold">Forgot your password?</h2>
 
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-11 col-md-5">
 					<%= form_for(resource, as: resource_name, url: password_path(resource_name), class: "form-horizontal", html: { method: :post }) do |f| %>
 					  <%= render "devise/shared/error_messages", resource: resource %>
 
