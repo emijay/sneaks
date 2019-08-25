@@ -210,3 +210,28 @@ body {
 		border-radius: 4px;
 		box-shadow: -1px 8px 8px 0px rgba(0, 0, 0, 0.16);
 	}
+
+@media (max-width:480px) {
+	.row.d-flex.justify-content-center.align-items-center {
+    margin: 0 auto;
+	}
+
+	.front {
+		.user-stats {
+			h4 {
+				font-size: 40px;
+				background-size: 100% 30%;
+			}
+
+		}
+
+	}
+
+	.back {
+		button.visit-button {
+			left: 37%;
+		}
+
+	}
+
+}

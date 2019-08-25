@@ -433,6 +433,7 @@ p.text-uppercase.d-block {
 
 // SHOE INDEX PAGE //
 .list-shoes {
+
 	.row.no-gutters {
 		padding: 10px;
 	}
@@ -455,10 +456,17 @@ p.text-uppercase.d-block {
 	ul {
 		display: flex;
 		flex-wrap: wrap;
+		padding: 0;
+		padding-left: 200px;
+    list-style-type: none;
 	}
 
-	.card.mb-3 {
-		margin: 10px;
+	ul.infinite-pagination.pagination {
+		padding: 0;
+	}
+
+	.col-12.col-md-3.card.mb-3 {
+    margin-right: 10px;
 	}
 
 }
@@ -557,12 +565,12 @@ p.text-uppercase.d-block {
 
 }
 
-.carousel-control-prev-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=!string!fill=!string!viewBox=!string!%3E%3Cpath d=!string!/%3E%3C/svg%3E") !important;
+span.carousel-control-prev-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
 
-.carousel-control-next-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=!string!fill=!string!viewBox=!string!%3E%3Cpath d=!string!/%3E%3C/svg%3E") !important;
+span.carousel-control-next-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
 // ADD SHOE PAGE //
@@ -745,7 +753,18 @@ p.text-uppercase.d-block {
 
 	}
 
-	// SHOE SHOW PAGE:;
+	// SHOE INDEX //
+.list-shoes {
+	.col-12.col-md-3.card.mb-3 {
+	    margin: 0px;
+	}
+
+	ul {
+		padding-left: 0;
+	}
+}
+
+	// SHOE SHOW PAGE //
 
 	.shoe-container {
 		margin: 0;
@@ -764,8 +783,10 @@ p.text-uppercase.d-block {
 
 	}
 
-	.col-12.col-md-9.collection {
-		justify-content: center;
+	.collection {
+		display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 	}
 
 	.shoe-market-price {
