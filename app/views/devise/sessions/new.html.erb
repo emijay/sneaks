@@ -1,11 +1,11 @@
 
 <div class="row">
 
-  <div class="col-6 sign-in">
+  <div class="d-none d-md-block col-md-6 sign-in">
     <%=image_tag("sign-in.jpeg")%>
   </div>
 
-  <div class="col-6 sign-in">
+  <div class="col-11 col-md-6 sign-in">
 		<div class="container">
 			<div class="user-logo">
 				<%=image_tag("logo.png")%>
@@ -14,7 +14,7 @@
 			<h2 class="my-3 font-weight-bold">Log in</h2>
 
 			<div class="row">
-				<div class="col-md-5">
+				<div class="coll-11 col-md-5">
 					<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
 
 				  	<div class="form-group">

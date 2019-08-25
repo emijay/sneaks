@@ -160,6 +160,13 @@ p.text-uppercase.d-block {
 		outline: none;
 		box-shadow: none !important;
 	}
+
+	input:focus, input:active {
+		background-color: white;
+		border-color: $brand-color;
+  	box-shadow: 0 0 8px rgba(255, 249, 82, 0.6);
+  	outline: 0 none;
+	}
 }
 
 // INDEX PAGE //
