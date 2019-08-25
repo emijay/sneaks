@@ -221,6 +221,10 @@ p.text-uppercase.d-block {
 
 .blog-index {
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
 	.row.no-gutters {
     padding: 10px;
 	}
@@ -239,6 +243,11 @@ p.text-uppercase.d-block {
 		font-size: 10px;
 		margin: 5px 5px 5px 10px;
 	}
+
+	.col-12.col-md-3.card.mb-3 {
+    margin-right: 10px;
+}
+
 }
 
 // BLOG SHOW PAGE //
