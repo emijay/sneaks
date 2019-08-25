@@ -80,10 +80,7 @@ Shoe.create(name: 'ASICS Gel-Lyte III Afew "Koi"
 UpcomingShoe.create(name: 'Nike AlphaDunk Dunk Of Death', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_6f453c64485abf86b080f4fd7b88cdd05d48c002f1a4f.jpg', release_date: '30/08/2019', retail_price: 170, brand_id: '13')
 UpcomingShoe.create(name: 'Adidas D.O.N. Issue 1 Iron Spider', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_3ac1498ff36fc967bb2c05c522d577c85d250f32a487b.jpg', release_date: '31/08/2019', retail_price: 100, brand_id: '1')
 UpcomingShoe.create(name: 'Titan X Nike LeBron 16 Low Agimat', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_ee16ca8236c3f968e3fa0b571de2b96c5d573f0fed1c0.jpg', release_date: '31/08/2019', retail_price: 175, brand_id: '13')
-UpcomingShoe.create(name: 'Nike Signal D/MS/X Guava Ice', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_7db138a165fecb8ed6960159c97c7ace5d046e3b8e35c.jpg', release_date: '05/09/2019', retail_price: 130, brand_id: '13')
-UpcomingShoe.create(name: 'Air Jordan 4 FIBA', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_eb3c5f7abfa14185b85fb9c8941a41c55d4dd115a4546.jpg', release_date: '07/09/2019', retail_price: 200, brand_id: '2')
 UpcomingShoe.create(name: 'Nike Shox R4 Midnight Navy Metallic Silver', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_701a614b52d3a8f34da6f44a481244c75d09915d076ce.jpg', release_date: '07/09/2019', retail_price: 140, brand_id: '13')
-UpcomingShoe.create(name: 'Travis Scott X Air Jordan 6 Medium Olive', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_2efb38d2ea7fc815f4dc6a7113ae7e595d421f526e4f4.jpg', release_date: '14/09/2019', retail_price: 250, brand_id: '2')
 UpcomingShoe.create(name: 'Nike Air Barrage Mid White Laser Orange', image_url: 'http://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_3668e12acc858ce0d9084ae0206c72aa5d27ebf1d62df.jpg', release_date: '21/09/2019', retail_price: 150, brand_id: '13')
 
 
