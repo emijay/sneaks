@@ -1,19 +1,16 @@
 
 <%= render "layouts/header" %>
 
-s<h1> Blog index page </h1>
-
-
 <div class="section-header">
 	<h2>The Fresh Feed</h2>
 </div>
 
 <div class="container-fluid blog-index">
-	<div class="card-deck">
+
 
 		<% @blogs.each do|blog| %>
 
-		<div class="card mb-3" style="max-width: 540px;">
+		<div class="col-12 col-md-3 card mb-3">
 			<div class="row no-gutters">
 				<div class="col-md-4">
 					<img src="<%= blog.image_url %>" class="card-img img-responsive" alt="blog-image">
@@ -27,5 +24,5 @@ s<h1> Blog index page </h1>
 			</div close row>
 		</div close card>
 		<% end %>
-	</div close card deck>
+
 </div close container>

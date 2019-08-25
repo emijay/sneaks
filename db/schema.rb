@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_172312) do
     t.text "name"
     t.text "image_url"
     t.text "release_date"
-    t.text "retail_price"
+    t.integer "retail_price"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
