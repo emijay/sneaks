@@ -508,6 +508,10 @@ p.text-uppercase.d-block {
 		background-position: bottom;
 	}
 
+	button:active, button:focus {
+		outline: 0;
+	}
+
 	input[type="submit"], button.submit-style {
 		font-family: $montserrat;
 		font-size: 15px;
@@ -561,26 +565,67 @@ p.text-uppercase.d-block {
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=!string!fill=!string!viewBox=!string!%3E%3Cpath d=!string!/%3E%3C/svg%3E") !important;
 }
 
-// EDIT SHOE PAGE //
-.edit-shoe-content {
-	h3 {
-		margin-bottom: 20px;
-		display: inline-block;
-		padding-bottom: 2px;
-		border-bottom: 2px solid $brand-color;
-	}
+// ADD SHOE PAGE //
+
+.add-shoe-content {
+	text-align: center;
+}
+
+#add-form {
+	margin-top: 10px;
 
 	p {
 		font-size: 15px;
+		margin: 20px 0;
 	}
 
-	ul {
-		padding: 0;
+	label {
+		font-weight: 500;
+		margin: 0 auto;
 	}
 
-	li {
-		list-style-type: none;
-		margin: 10px auto;
+	input {
+		font-weight: 300;
+		border: none;
+		border-bottom: 1px solid $brand-color;
+	}
+
+	input[type="submit"] {
+		font-family: $montserrat;
+		font-size: 15px;
+		font-weight: 300;
+		margin: 10px 0;
+		padding: 8px;
+		border: none;
+		background: black;
+		color: $brand-color;
+		display: inline;
+		border-radius: .25rem;
+	}
+
+		input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+		color: black;
+		background-color: $brand-color;
+		border-color: $brand-color;
+		box-shadow: 0 0 0 0.2rem $brand-color;
+		outline: none;
+		box-shadow: none !important;
+	}
+
+	input:active, input:focus, select:active, select:focus {
+		outline: 0;
+	}
+
+	input[type='http://www.w3.org/2000/svg'] {
+		margin: 0;
+	}
+
+}
+
+// EDIT SHOE PAGE //
+.edit-shoe-content {
+	p {
+		font-size: 15px;
 	}
 
 	button {
@@ -604,6 +649,7 @@ p.text-uppercase.d-block {
 		display: inline;
 		border-radius: .25rem;
 	}
+
 }
 
 #edit-form {
@@ -621,7 +667,6 @@ p.text-uppercase.d-block {
 	input {
 		font-weight: 300;
 		border: none;
-		// padding-bottom: 2px;
 		border-bottom: 1px solid $brand-color;
 	}
 
@@ -633,6 +678,7 @@ p.text-uppercase.d-block {
 	input[type='http://www.w3.org/2000/svg'] {
 		margin: 0;
 	}
+
 }
 
 // media queries //

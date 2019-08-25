@@ -1,70 +1,63 @@
-<h1> Add new shoe</h1>
-
-<%= form_with scope: :shoes, url: shoes_path, local: true do |form| %>
-
-	<p> Brand: <%= form.collection_select :brand_id, @brands, :id, :name %> </p>
-  <p> Size: <%= form.collection_select :size_id, @sizes, :id, :size %> </p>
-
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.label :color %><br>
-    <%= form.text_field :color %>
-  </p>
-
-  <p>
-    <%= form.label :release_year %><br>
-    <%= form.text_field :release_year %>
-  </p>
-
-  <p>
-    <%= form.label :style %><br>
-    <%= form.text_field :style %>
-  </p>
-
-  <p>
-    <%= form.label :cost_price %><br>
-    <%= form.text_field :cost_price %>
-  </p>
-
-	<p>
-    <%= form.label :first_image_url %><br>
-    <%= form.text_field :first_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :second_image_url %><br>
-    <%= form.text_field :second_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :third_image_url %><br>
-    <%= form.text_field :third_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :fourth_image_url %><br>
-    <%= form.text_field :fourth_image_url %>
-  </p>
-
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-
-
-	<p>
-    <%= form.hidden_field :user_id, :value => @id %>
-  </p>
-
-
-  <p>
-    <%= form.submit %>
-  </p>
-
-<% end %>
-
-<%= link_to 'Back', shoes_path %>
+<%= render "layouts/header" %>
+<div class="section-header">
+	<h2>Add New Sneak</h2>
+</div>
+<div class="container add-shoe-content">
+	<div class="row">
+		<div class="col-10 offset-md-1">
+			<div id="add-form">
+				<%= form_with scope: :shoes, url: shoes_path, local: true do |form| %>
+				<p> Brand: <%= form.collection_select :brand_id, @brands, :id, :name %> </p>
+				<p> Size: <%= form.collection_select :size_id, @sizes, :id, :size %> </p>
+				<p>
+					<%= form.label :name %><br>
+					<%= form.text_field :name %>
+				</p>
+				<p>
+					<%= form.label :color %><br>
+					<%= form.text_field :color %>
+				</p>
+				<p>
+					<%= form.label :release_year %><br>
+					<%= form.text_field :release_year %>
+				</p>
+				<p>
+					<%= form.label :style %><br>
+					<%= form.text_field :style %>
+				</p>
+				<p>
+					<%= form.label :cost_price %><br>
+					<%= form.text_field :cost_price %>
+				</p>
+				<p>
+					<%= form.label :first_image_url %><br>
+					<%= form.text_field :first_image_url %>
+				</p>
+				<p>
+					<%= form.label :second_image_url %><br>
+					<%= form.text_field :second_image_url %>
+				</p>
+				<p>
+					<%= form.label :third_image_url %><br>
+					<%= form.text_field :third_image_url %>
+				</p>
+				<p>
+					<%= form.label :fourth_image_url %><br>
+					<%= form.text_field :fourth_image_url %>
+				</p>
+				<p>
+					<%= form.label :description %><br>
+					<%= form.text_area :description %>
+				</p>
+				<p>
+					<%= form.hidden_field :user_id, :value => @id %>
+				</p>
+				<p>
+					<%= form.submit %>
+				</p>
+				<% end %>
+			</div close form container>
+			<%= link_to 'Back to Shoe Index', shoes_path %>
+		</div close col>
+	</div close row>
+</div close container>
