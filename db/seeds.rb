@@ -88,8 +88,6 @@ UpcomingShoe.create(name: 'Nike Air Barrage Mid White Laser Orange', image_url: 
 
 
 
-
-
 Blog.create(title: 'First Look at the Rumored Adidas UltraBOOST 2020', content: 'Although the hype surrounding adidas‘ UltraBOOST lineup has died down a bit since the silhouette’s inception, that hasn’t stopped the Germain giant in offering up new iterations of the beloved model.
 
 After introducing the UltraBOOST ‘19 for this year, it looks as if a new version will soon be hitting the shelves. Shared via @sneakerprophet_, we have our first look at what could potentially be the UltraBOOST 2020. The sneaker seen above incorporates the same sleek design motif of the ‘19, however a few new details have been added such as the weave pattern on the Primeknit upper and taped Three Stripes cage. Additionally an iridescent “Metallic Purple” BOOST midsole finishes off the updated model. The pair also feature a co-branded tongue tab with ISS National Lab — a government-funded laboratory that aids in space research to improve life on Earth.

@@ -1,7 +1,86 @@
 class ShoesController < ApplicationController
 
     def index
-      @shoes = Shoe.all.paginate(:page => params[:page], :per_page => 5)
+      # @shoes = Shoe.all.paginate(:page => params[:page], :per_page => 9)
+      @brands = Brand.all
+      @filters = request.query_parameters[:filter]
+      @years = request.query_parameters[:year]
+      @releases = Shoe.select(:release_year).order(:release_year => :desc).distinct
+
+      if !@filters && !@years
+
+          p 'going to the no filters'
+          if request.query_parameters[:sort] == "r_date"
+            @shoes = Shoe.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "o_date"
+            @shoes = Shoe.all.order(created_at: :asc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "h_price"
+            @shoes = Shoe.all.order('cost_price::integer DESC').paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "l_price"
+            @shoes = Shoe.all.order('cost_price::integer ASC').paginate(:page => params[:page], :per_page => 9)
+
+          else
+            @shoes = Shoe.all.paginate(:page => params[:page], :per_page => 9)
+          end
+
+      elsif @filters && !@years
+
+          if request.query_parameters[:sort] == "r_date"
+            @shoes = Shoe.where(brand_id: @filters).order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "o_date"
+            @shoes = Shoe.where(brand_id: @filters).order(created_at: :asc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "h_price"
+            @shoes = Shoe.where(brand_id: @filters).order( 'cost_price::integer DESC').paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "l_price"
+            @shoes = Shoe.where(brand_id: @filters).order('cost_price::integer ASC').paginate(:page => params[:page], :per_page => 9)
+
+          else
+            @shoes = Shoe.where(brand_id: @filters).paginate(:page => params[:page], :per_page => 9)
+          end
+
+      elsif !@filters && @years
+
+          if request.query_parameters[:sort] == "r_date"
+            @shoes = Shoe.where(release_year: @years).order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "o_date"
+            @shoes = Shoe.where(release_year: @years).order(created_at: :asc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "h_price"
+            @shoes = Shoe.where(release_year: @years).order( 'cost_price::integer DESC').paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "l_price"
+            @shoes = Shoe.where(release_year: @years).order('cost_price::integer ASC').paginate(:page => params[:page], :per_page => 9)
+
+          else
+            @shoes = Shoe.where(release_year: @years).paginate(:page => params[:page], :per_page => 9)
+          end
+
+      else
+
+          if request.query_parameters[:sort] == "r_date"
+            @shoes = Shoe.where(brand_id: @filters, release_year: @years).order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "o_date"
+            @shoes = Shoe.where(brand_id: @filters, release_year: @years).order(created_at: :asc).paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "h_price"
+            @shoes = Shoe.where(brand_id: @filters, release_year: @years).order('cost_price::integer DESC').paginate(:page => params[:page], :per_page => 9)
+
+          elsif request.query_parameters[:sort] == "l_price"
+            @shoes = Shoe.where(brand_id: @filters, release_year: @years).order('cost_price::integer ASC').paginate(:page => params[:page], :per_page => 9)
+
+          else
+            @shoes = Shoe.where(brand_id: @filters, release_year: @years).paginate(:page => params[:page], :per_page => 9)
+          end
+
+      end
 
       respond_to do |format|
         format.html
@@ -12,30 +91,9 @@ class ShoesController < ApplicationController
     def show
       @shoe = Shoe.find(params[:id])
       @images = [@shoe.first_image_url, @shoe.second_image_url, @shoe.third_image_url, @shoe.fourth_image_url]
-      require 'net/http'
-      require 'json'
-      url = "https://api.suplexed.com/v2/pricer_web.php?p_type=snkrs&p_var1=#{@shoe.style}"
-      uri = URI(url)
+      @hiddenstyle = @shoe.style
+      @hiddensize = @shoe.size.size
 
-      response = Net::HTTP.get(uri)
-      response2 = JSON.parse(response)
-      @arrays = response2["sizes"]
-      @rows = @arrays.select { |item| item["size"] == @shoe.size.size }
-
-      if @rows.empty?
-        @stockx = "No Results"
-        @goat = "No Results"
-        @flightclub = "No Results"
-
-      else
-        @stockx = "$#{@rows[0]["stockx"]}"
-        @goat = "$#{@rows[0]["goat"]}"
-        @flightclub = "$#{@rows[0]["flightclub"]}"
-
-        puts "StockX Price: #{@stockx}"
-        puts "GOAT Price: #{@goat}"
-        puts "FlightClub Price: #{@flightclub}"
-        end
     end
 
     def new
