@@ -15,6 +15,9 @@
 //= require_tree .
 //= stub 'getprice'
 
+//= require jquery3
+//= require jquery_ujs
+
 //= require popper
 //= require bootstrap
 
