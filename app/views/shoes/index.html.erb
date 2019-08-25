@@ -7,16 +7,43 @@
 
 <!-- main content section -->
 <div class="main-content container-fluid">
+	<div class="row">
 
-	<div class="list-shoes">
-	  <ul>
-	    <% @shoes.each do |shoe| %>
-	      <%= render shoe %>
-	      <br>
-	    <% end %>
-	  </ul>
+		<div class="col-12 col-md-3 filter">
+			<div class="sort-form-container">
+				<%= render "layouts/indexsortform" %>
+			</div close sort form container>
 
-	  <%= will_paginate @shoes, renderer: WillPaginateInfinite::InfinitePagination %>
-	</div close list shoes>
+			<div class="filter-header">
+				<h1>FILTER</h1>
+			</div>
 
+			<p>
+  			<button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   		 		Open Filters
+  			</button>
+			</p>
+
+			<div class="collapse" id="collapseExample">
+			  <div class="card card-body">
+					<div class="filter-form-container">
+						<%= render "layouts/indexfilterform" %>
+					</div>
+				</div>
+			</div>
+		</div close filter column>
+
+		<div class="col-12 col-md-9 collection">
+			<div class="list-shoes">
+			  <ul>
+			    <% @shoes.each do |shoe| %>
+			      <%= render shoe %>
+			      <br>
+			    <% end %>
+			  </ul>
+
+		  	<%= will_paginate @shoes, renderer: WillPaginateInfinite::InfinitePagination %>
+			</div close list shoes>
+		</div close shoe column>
+	</div>
 </div close container>

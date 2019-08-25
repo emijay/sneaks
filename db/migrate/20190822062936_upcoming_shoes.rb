@@ -4,7 +4,7 @@ class UpcomingShoes < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :image_url
       t.text :release_date
-      t.text :retail_price
+      t.integer :retail_price
       t.references :brand
       t.timestamps
     end
