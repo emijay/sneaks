@@ -2,9 +2,9 @@
 <div class="section-header">
 <h2> Users </h2>
 </div>
+
 <div class="container-fluid user-collections">
 	<div class="row">
-
 		<% @shoes.select(:user_id).distinct.each do |shoe| %>
 		<div class="col-md-4">
 			<div class="card-container manual-flip">
@@ -22,7 +22,7 @@
 									<h4><span class="stat-header">Shoes in Collection</span><%= link_to @shoes.where(user_id: shoe.user.id).count, owner_path(shoe.user.id) %></h4>
 								</div><!-- close first stats col -->
 								<div class="col-6 stat-col">
-									<h4><span class="stat-header">Value of Collection</span><%= @shoes.where(user_id: shoe.user.id).sum(:cost_price)%></h4>
+									<h4><span class="stat-header">Value of Collection</span>$<%= @shoes.where(user_id: shoe.user.id).sum(:cost_price)%></h4>
 								</div><!-- close first stats col -->
 							</div> <!-- end stats row -->
 						</div> <!-- close stats container -->
