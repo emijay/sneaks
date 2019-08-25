@@ -2,7 +2,7 @@ class HomesController < ApplicationController
 
     def index
       @shoes = Shoe.all
-      @blogs = Blog.all.shuffle
+      @blogs = Blog.all.reverse
       @upcoming_shoes = UpcomingShoe.all
 
     end
