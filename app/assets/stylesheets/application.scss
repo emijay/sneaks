@@ -109,12 +109,13 @@ div#navbarToggleExternalContent {
 	background-color: #ffffff !important;
 }
 
-// .navbar-toggler-icon {
-// 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox=!string!xmlns=!string!%3E%3Cpath stroke=!string!stroke-width=!string!stroke-linecap=!string!stroke-miterlimit=!string!d=!string!/%3E%3C/svg%3E") !important;
-// }
-
 .navbar-toggler:focus, .navbar-toggler:active {
 	outline: none !important;
+}
+
+p.text-uppercase.d-block {
+    font-size: 15px;
+    margin: 10px auto 10px auto;
 }
 
 .logo-container {
@@ -124,6 +125,13 @@ div#navbarToggleExternalContent {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+// SIGN IN, SIGN UP //
+.sign-up, .edit {
+	img {
+		width: 100%;
+		max-height: 800px;
+	}
 }
 
 // INDEX PAGE //
