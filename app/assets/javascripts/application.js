@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+//= stub 'getprice'
 
 //= require popper
 //= require bootstrap
