@@ -127,10 +127,38 @@ p.text-uppercase.d-block {
 	background-repeat: no-repeat;
 }
 // SIGN IN, SIGN UP //
-.sign-up, .edit {
+.sign-up, .edit, .sign-in {
 	img {
 		width: 100%;
 		max-height: 800px;
+	}
+
+	.user-logo {
+		img {
+			width: 40%;
+		}
+	}
+
+	.btn {
+		font-family: $montserrat;
+		font-size: 15px;
+		font-weight: 500;
+		margin: 5px 0;
+		padding: 8px;
+		border: none;
+		background: black;
+		color: $brand-color;
+		display: inline;
+		border-radius: .25rem;
+	}
+
+	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+		color: black;
+		background-color: $brand-color;
+		border-color: $brand-color;
+		box-shadow: 0 0 0 0.2rem $brand-color;
+		outline: none;
+		box-shadow: none !important;
 	}
 }
 
@@ -539,6 +567,17 @@ p.text-uppercase.d-block {
 // media queries //
 @media (max-width:480px) {
 
+		// USER PAGES
+
+	.sign-up, .edit, .sign-in {
+		.user-logo {
+			img {
+				width: 80%;
+			}
+		}
+	}
+	//MAIN INDEX
+
 	.blog {
 		margin-top: 20px;
 	}
@@ -585,6 +624,8 @@ p.text-uppercase.d-block {
 		}
 	}
 }
+
+	// SHOE SHOW PAGE: ;
 
 	.shoe-container {
 		margin: 0;
