@@ -9,7 +9,7 @@
 							<p class="text-uppercase d-block"><%= link_to 'Add new shoe', new_shoe_path %></p>
 							<p class="text-uppercase d-block"><%= link_to 'View all users', owners_path%></p>
 				      <p class="text-uppercase d-block"><%= link_to 'View all shoes', shoes_path%></p>
-				      <p class="text-uppercase d-block"><%= link_to 'View all blogs', shoes_path%></p>
+				      <p class="text-uppercase d-block"><%= link_to 'View all blogs', blogs_path%></p>
 				      <% if current_user.admin? %>
 				      	<p class="text-uppercase d-block"><%= link_to 'Add new upcoming shoe', new_upcoming_shoe_path %></p>
 				      	<p class="text-uppercase d-block"><%= link_to 'Add new blog', new_blog_path %></p>
@@ -23,6 +23,8 @@
 							  <p class="text-uppercase d-block"><%= link_to 'User Sign in', new_user_session_path %></p>
 								<p class="text-uppercase d-block"><%= link_to 'View all users', owners_path%></p>
 								<p class="text-uppercase d-block"><%= link_to 'View all shoes', shoes_path%></p>
+								<p class="text-uppercase d-block"><%= link_to 'View all blogs', blogs_path %></p>
+
 						<% end %>
 			    </p>
 
