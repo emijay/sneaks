@@ -126,7 +126,7 @@ p.text-uppercase.d-block {
 .logo-container {
 	height: 85px;
 	margin: 10px auto;
-	background-image: url(logo.png);
+	background: asset_url('logo.png');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
