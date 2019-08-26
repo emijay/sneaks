@@ -18,4 +18,5 @@
 //= require popper
 //= require bootstrap
 
+
 //= require will_paginate_infinite

@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   resources :blogs
   resources :homes
   resources :upcoming_shoes
+
+  resources :conversations do
+    resources :messages
+  end
+
 end
