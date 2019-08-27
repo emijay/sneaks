@@ -1,28 +1,35 @@
-#Sneaks
+# Sneaks
 sneaks.herokuapp.com
 
-#About the app
-- Platform for sneakerheads to showcase their sneakers collection
-- Users are able to view other collection
-- Get update on the current market price of the showcased sneakers
-- Users are able to get updates on the upcoming sneakers that entering the market
+- An app for sneakerheads to keep track of the shoes in their collection, as well as their current market value
+- Ability to view other users' collections
+- Other features include release dates for upcoming shoe drops and a sneaker-related news feed
+
+# Installation instructions for any dependencies
+- Install Ruby & Rails (5.2.3 versions)
+- Install Postgres Database
+- Run `bundle install` to install all required gems
+- Run `db:create` to create the local Postgres database
+- Run `db:migrate` to create the required tables in the the database
+- Rub `db:seed` to seed the tables with starting data
+- Run `rails server` to start running the local server
 
 
-#Current development
-- Sort sneakers based on price and date where the sneakers is posted
+# App Features
+- Sort sneakers based on price and date when sneaker was added
 - Filter sneakers based on:
 		- brands
 		-release year
-- API to fetch from 3 different sources
+- Dynamic price fetching from 3 different sources - StockX, GOAT and Flight Club. 
 
 
-#Further development
-- Implementing chat/message function for users to make queries on the specific sneaker to it owners
-- Able to switch between list and grid views
-- Incorporate the subtotal values for collection. For e.g (amount invested so far, current value of collection, etc.)
-- Implement wishlist
+# Further Development
+- User-to-user chat/message function
+- Ability to switch between list and grid views
+- Incorporate  subtotal values for collection, e.g amount invested so far, current value of collection, etc.
+- Wishlist
 
-#Technologies used
+# Technologies used
 - Ruby
 - Javascript
 - HTML
@@ -31,10 +38,4 @@ sneaks.herokuapp.com
 - Postgres Database
 - Sass & Bootstrap
 - Heroku
-
-#Installation instructions for any dependencies
-- Install Ruby & Rails (5.2.3 versions)
-- Install Postgres Database
-- Run bundle install
-- Run db:create & db:migrate
-- Run ‘rails server’ to start
+- Price-fetching API
