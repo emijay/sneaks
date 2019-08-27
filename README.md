@@ -5,7 +5,7 @@ sneaks.herokuapp.com
 - Ability to view other users' collections
 - Other features include release dates for upcoming shoe drops and a sneaker-related news feed
 
-# Installation instructions for any dependencies
+# Installation
 - Install Ruby & Rails (5.2.3 versions)
 - Install Postgres Database
 - Run `bundle install` to install all required gems
@@ -17,10 +17,8 @@ sneaks.herokuapp.com
 
 # App Features
 - Sort sneakers based on price and date when sneaker was added
-- Filter sneakers based on:
-		- brands
-		-release year
-- Dynamic price fetching from 3 different sources - StockX, GOAT and Flight Club. 
+- Filter sneakers based on brands and release year
+- Dynamic price fetching from 3 different sources - StockX, GOAT and Flight Club
 
 
 # Further Development
